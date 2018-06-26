@@ -78,7 +78,7 @@ form {
 			pointer-events: none;
 			transition: transform .2s ease-out, opacity .2s linear;
 		}
-		
+
 		&.focusWithText .helper {
 		/*input[type='email']:focus + .helper {*/
 			transform: translate(1.4em, 2.0em) scale(.65); opacity: 1;

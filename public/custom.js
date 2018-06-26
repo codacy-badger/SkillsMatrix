@@ -16,18 +16,18 @@ function getCoord(e) {
 	div.textContent = email.value.substr(0, carPos);
 	span.textContent = email.value.substr(carPos) || '.';
 	div.appendChild(span);
-	
+
 	emailCoords = getPosition(email);							//console.log("emailCoords.x: " + emailCoords.x + ", emailCoords.y: " + emailCoords.y);
 	caretCoords = getPosition(span);							//console.log("caretCoords.x " + caretCoords.x + ", caretCoords.y: " + caretCoords.y);
 	centerCoords = getPosition(mySVG);							//console.log("centerCoords.x: " + centerCoords.x);
 	svgCoords = getPosition(mySVG);
 	screenCenter = centerCoords.x + (mySVG.offsetWidth / 2);		//console.log("screenCenter: " + screenCenter);
 	caretPos = caretCoords.x + emailCoords.x;					//console.log("caretPos: " + caretPos);
-	
+
 	dFromC = screenCenter - caretPos; 							//console.log("dFromC: " + dFromC);
 	var pFromC = Math.round((caretPos / screenCenter) * 100) / 100;
 	if(pFromC < 1) {
-		
+
 	} else if(pFromC > 1) {
 		pFromC -= 2;
 		pFromC = Math.abs(pFromC);
@@ -39,7 +39,7 @@ function getCoord(e) {
 	} else if(eyeDistH < -eyeMaxHorizD) {
 		eyeDistH = -eyeMaxHorizD;
 	}
-	
+
 	var eyeLCoords = {x: svgCoords.x + 84, y: svgCoords.y + 76};
 	var eyeRCoords = {x: svgCoords.x + 113, y: svgCoords.y + 76};
 	var noseCoords = {x: svgCoords.x + 97, y: svgCoords.y + 81};
@@ -69,7 +69,7 @@ function getCoord(e) {
 	var outerEarY = Math.cos(mouthAngle) * 5;
 	var hairX = Math.cos(mouthAngle) * 6;
 	var hairS = 1.2;
-	
+
 	TweenMax.to(eyeL, 1, {x: -eyeLX , y: -eyeLY, ease: Expo.easeOut});
 	TweenMax.to(eyeR, 1, {x: -eyeRX , y: -eyeRY, ease: Expo.easeOut});
 	TweenMax.to(nose, 1, {x: -noseX, y: -noseY, rotation: mouthR, transformOrigin: "center center", ease: Expo.easeOut});
@@ -82,7 +82,7 @@ function getCoord(e) {
 	TweenMax.to(earHairL, 1, {x: -outerEarX, y: -outerEarY, ease: Expo.easeOut});
 	TweenMax.to(earHairR, 1, {x: -outerEarX, y: outerEarY, ease: Expo.easeOut});
 	TweenMax.to(hair, 1, {x: hairX, scaleY: hairS, transformOrigin: "center bottom", ease: Expo.easeOut});
-	
+
 	document.body.removeChild(div);
 };
 
@@ -90,7 +90,7 @@ function onEmailInput(e) {
 	getCoord(e);
 	var value = e.target.value;
 	curEmailIndex = value.length;
-	
+
 	// very crude email validation for now to trigger effects
 	if(curEmailIndex > 0) {
 		if(mouthStatus == "small") {
