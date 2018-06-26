@@ -8,4 +8,4 @@ References of code used on this project:
 
 
 Login page: 
-![alt text](https://github.com/luiz1361/SkillsMatrix/tree/master/docs/screenshots/login.png "Login page")
+![alt text](https://github.com/luiz1361/SkillsMatrix/raw/master/docs/screenshots/login.png "Login page")
