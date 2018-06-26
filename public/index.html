@@ -3,8 +3,13 @@
   <title></title>
   <link href="style.scss" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <style>
+	body {
+		background-color: rgb(255, 0, 0);
+	}
+</style>
 </head>
-<body>
+<body id="particles-js">
   <form>
 	<h1 class="text-center">Skills Matrix</h1><br>
   	<div class="svgContainer">
@@ -99,26 +104,23 @@
   	</div>
 
   	<div class="inputGroup form-group inputGroup1">
-  		<label for="email1">Username:</label>
-      <br>
-  		<input type="text" id="email" class="email form-control" maxlength="256"/>
-  		<p class="helper helper1" style="display:none;">email@domain.com</p>
-  		<span class="indicator" style="display:none;"></span>
+  		<br>
+  		<input type="text" id="email" class="email form-control" maxlength="256" placeholder="Username"/>
   	</div>
   	<div class="inputGroup form-group inputGroup2">
-  		<label for="password">Password</label>
-      <br>
-  		<input type="password" id="password" class="password form-control"/>
+  		<input type="password" id="password" class="password form-control" placeholder="Password"/>
   	</div>
-  	<div class="inputGroup form-group inputGroup3">
+  	<div class="inputGroup form-group inputGroup3"></div>
   		<button id="login" class="btn btn-block btn-primary">Log in</button>
-  	</div>
+	  </div>
+	  <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
   </form>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
   <script src="custom.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+  <script src="particles.js"></script>
+  <script>particlesJS("particles-js",<strong>config.js</strong>);</script>
 </body>
 </html>
