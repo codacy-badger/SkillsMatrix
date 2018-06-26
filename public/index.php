@@ -178,15 +178,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   		</div>
   	</div>
 
-  	<div class="inputGroup form-group inputGroup1">
+  	<div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
   		<br>
-  		<input type="text" id="email" class="email form-control" maxlength="256" placeholder="Username"/>
+  		<input type="text" id="email" class="form-control" name="username" maxlength="256" placeholder="Username" value="<?php echo $username; ?>"/>
   	</div>
-  	<div class="inputGroup form-group inputGroup2">
-  		<input type="password" id="password" class="password form-control" placeholder="Password"/>
+  	<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+  		<input type="password" name="password" id="password" class="password form-control" placeholder="Password"/>
   	</div>
-  	<div class="inputGroup form-group inputGroup3"></div>
-  		<button id="login" class="btn btn-block btn-primary">Log in</button>
+  	<div class="form-group"></div>
+  		<button id="login" type="submit" value="Login" class="btn btn-block btn-primary">Log in</button>
 	  </div>
 	  <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
   </form>
