@@ -48,6 +48,9 @@
                         <a href="#">Skills List</a>
                     </li>
                     <li>
+                        <a href="#">People</a>
+                    </li>
+                    <li>
                         
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reports</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
