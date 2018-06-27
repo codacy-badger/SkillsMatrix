@@ -1,4 +1,5 @@
 # Skills Matrix
+[![CircleCI](https://circleci.com/gh/luiz1361/SkillsMatrix.svg?style=svg)](https://circleci.com/gh/luiz1361/SkillsMatrix)
 
 This web application was build with the goal of providing an easy way to track skills of individuals within an organization.
 
