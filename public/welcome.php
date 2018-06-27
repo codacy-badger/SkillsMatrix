@@ -48,7 +48,7 @@
                         <a href="#">My Skills</a>
                     </li>
                     <li>
-                        <a href="#">Skills List</a>
+                        <a href="skillslist.php">Skills List</a>
                     </li>
                     <li>
                         <a href="#">People</a>
