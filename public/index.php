@@ -76,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <html>
 <head>
   <title>Skills Matrix - Login</title>
-  <link href="style.scss" rel="stylesheet">
+  <link href="../css.style.scss" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <style>
 	body {
@@ -192,10 +192,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   </form>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
-  <script src="custom.js"></script>
+  <script src="../scripts/custom.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="particles.js"></script>
-  <script src="config.js"></script>
+  <script src="../scripts/particles.js"></script>
+  <script src="../scripts/config.js"></script>
 </body>
 </html>
