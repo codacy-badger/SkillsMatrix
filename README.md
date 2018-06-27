@@ -1,5 +1,5 @@
 # Skills Matrix
-[![CircleCI](https://circleci.com/gh/luiz1361/SkillsMatrix.svg?style=svg)](https://circleci.com/gh/luiz1361/SkillsMatrix)
+[![CircleCI](https://circleci.com/gh/luiz1361/SkillsMatrix.svg?style=svg)](https://circleci.com/gh/luiz1361/SkillsMatrix) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 This web application was build with the goal of providing an easy way to track skills of individuals within an organization.
 
