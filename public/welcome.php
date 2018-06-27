@@ -36,6 +36,8 @@
                 </div>
 
                 <ul class="list-unstyled components">
+                <li class="active">
+                </li>
                     <li>
                         <a href="welcome.php">Home</a>
                     </li>
