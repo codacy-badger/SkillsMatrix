@@ -40,41 +40,26 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
             </div>
 
             <ul class="list-unstyled components">
-                
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
+                <li>
+                    <a href="welcome.php">Home</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <a href="#">My Skills</a>
+                </li>
+                <li>
+                    <a href="#">Skills List</a>
+                </li>
+                <li>
+                    
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reports</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Page 1</a>
+                            <a href="#">By Skills</a>
                         </li>
                         <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
+                            <a href="#">By Individual</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
                 </li>
             </ul>
 
@@ -106,7 +91,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Page</a>
+                            <p><a href="all_skills.php" class="btn btn-success">All Skills</a> <a href="my_skills.php" class="btn btn-danger">My Skills</a> <a href="logout.php" class="btn btn-warning">Sign Out</a></p>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Page</a>
@@ -122,9 +107,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
                 </div>
             </nav>
             
-            <p><a href="all_skills.php" class="btn btn-success">All Skills</a> <a href="my_skills.php" class="btn btn-danger">My Skills</a> <a href="logout.php" class="btn btn-warning">Sign Out</a></p>
-
-            <?php
+                        <?php
 require_once '../private/db.inc.php';
 
    $sql = 'SELECT * FROM users';
