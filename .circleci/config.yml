@@ -15,8 +15,8 @@ jobs:
           MYSQL_USER: skillsmatrixuser
           MYSQL_PASSWORD: 123456
           MYSQL_ROOT_PASSWORD: 123456
-	  MYSQL_ALLOW_EMPTY_PASSWORD: false
-	  MYSQL_RANDOM_ROOT_PASSWORD: false
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_RANDOM_ROOT_PASSWORD: false
 
     working_directory: ~/laravel
 
