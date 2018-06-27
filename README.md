@@ -3,6 +3,18 @@
 
 This web application was build with the goal of providing an easy way to track skills of individuals within an organization.
 
+```javascript
+function workInProgress(donation) {
+    var wip = 0;
+    while (donation > 0 ){
+        wip++;
+        donation--;
+    }
+    return wip
+}
+```
+[Click here for PayPal Donation](https://paypal.me/luiz1361)
+
 ## Screenshots
 Login page: 
 ![alt text](https://github.com/luiz1361/SkillsMatrix/raw/master/docs/screenshots/login.png)
