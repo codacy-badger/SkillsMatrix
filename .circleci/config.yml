@@ -12,10 +12,9 @@ jobs:
       - image: mysql:5.7
         command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin --innodb-large-prefix=true --innodb-file-format=Barracuda
         environment:
-          MYSQL_USER: skillsmatrixuser
-          MYSQL_PASSWORD: 123456
-          MYSQL_ROOT_PASSWORD: 123456
-          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_USER: root
+          MYSQL_ROOT_PASSWORD: 
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
           MYSQL_RANDOM_ROOT_PASSWORD: false
 
     working_directory: ~/laravel
@@ -27,4 +26,4 @@ jobs:
       - run: sudo composer self-update
       - run:
           name: Mysql database
-          command: mysql  -h 127.0.0.1 -u skillsmatrix -p123456 -e "create database mate;"
+          command: mysql -h 127.0.0.1 -u root -p -e "create database skillsmatrix;"
