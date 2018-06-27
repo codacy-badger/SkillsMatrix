@@ -1,11 +1,12 @@
 # Skills Matrix
 
-This web application was build with the objective of enable tracking of skills of an individual or group.
+This web application was build with the goal of providing an easy way to track skills of individuals within an organization.
 
-References of code used on this project:
+References of resources used on this project:
 * https://vincentgarreau.com/particles.js/
 * https://dribbble.com/shots/4249163-Animated-login-form-avatar
-
+* https://datatables.net/examples/basic_init/table_sorting.html
+* https://bootstrapious.com/p/bootstrap-sidebar
 
 Login page: 
 ![alt text](https://github.com/luiz1361/SkillsMatrix/raw/master/docs/screenshots/login.png "Login page")
