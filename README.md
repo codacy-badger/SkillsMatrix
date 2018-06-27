@@ -5,7 +5,7 @@ This web application was build with the goal of providing an easy way to track s
 
 ## Screenshots
 Login page: 
-![alt text](https://github.com/luiz1361/SkillsMatrix/raw/master/docs/screenshots/login.png "Login page"  | width=100)
+![alt text](https://github.com/luiz1361/SkillsMatrix/raw/master/docs/screenshots/login.png)
 
 ## Demo
 > **TBD**
