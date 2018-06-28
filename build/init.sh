@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir mysql
-mkdir www
+mkdir mysql && chmod 777 mysql
+mkdir www && chmod 777 www
 
 docker-compose up --build -d
 
