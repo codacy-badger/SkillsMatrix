@@ -12,7 +12,7 @@ services:
       - db
 
   db:
-    image: mysql:5.7
+    build: db
     volumes:
      - ./mysql:/var/lib/mysql
     environment:
