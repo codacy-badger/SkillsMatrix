@@ -20,6 +20,9 @@
 -- Table structure for table `skills`
 --
 
+CREATE USER `skillsmatrixuser`@`localhost` IDENTIFIED BY `123456`;
+CREATE USER `GRANT ALL PRIVILEGES ON skillsmatrix.* TO `skillsmatrixuser`@`localhost`;
+
 DROP TABLE IF EXISTS `skills`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
