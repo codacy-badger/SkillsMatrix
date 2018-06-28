@@ -33,7 +33,7 @@ Login page:
 
 1. #git clone https://github.com/luiz1361/SkillsMatrix.git
 2. #cd ./build
-3. #./init.sh**(Linux)** or ./init.ps1**(Windows)**
+3. #./init.sh **(Linux)** or ./init.ps1 **(Windows)**
 4. #cd ./www **(Web files are located here)**
 5. **Browse to** http://127.0.0.1/public
 6. **Username:** skillsmatrixuser and **Password:** 123456
