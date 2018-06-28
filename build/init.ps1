@@ -1,5 +1,3 @@
-#!/bin/bash
-
 mkdir mysql
 mkdir www
 
