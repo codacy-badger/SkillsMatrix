@@ -76,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: login.php");
+                header("location: index.php");
             } else{
                 echo "Something went wrong. Please try again later.";
             }
@@ -90,25 +90,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-    <meta charset="UTF-8">
+ 
     <title>Skills Matrix - Registration</title>
     <link href="css/style.scss" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
   	    body {
 		    background-color: #47A9D2;
 	    }
     </style>
 </head>
 <body id="particles-js">
-    <div class="wrapper">
-
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <h2 class="text-center">Sign Up</h2>
+        <form <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <h1 class="text-center">Sign Up</h1>
         <p class="text-center">Please fill this form to create an account.</p> 
+        <div class="svgContainer">
+        <div>
+        
+               </div>
+    </div>
+        
         <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
                 <input type="text" name="username"class="form-control" value="<?php echo $username; ?>">
@@ -129,8 +133,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
             <p>Already have an account? <a href="index.php">Login here</a>.</p>
+            
+     
         </form>
-    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
   <script src="scripts/custom.js"></script>
   <!-- Latest compiled and minified JavaScript -->

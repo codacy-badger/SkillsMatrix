@@ -12,12 +12,12 @@
         require_once '../private/db.inc.php';
         mysqli_select_db($link,'skillsmatrix');
       
-        $sql = "INSERT INTO skills (description) VALUES ('$_POST[skill]')";
+        $sql = "INSERT INTO skills (description) VALUES (UPPER('$_POST[skill]'))";
       
         if(mysqli_query($link, $sql)){
-            echo "Records added successfully.";
+//            echo "Records added successfully.";
         } else{
-            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+//            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
         }
       
       // close connection
@@ -33,9 +33,9 @@
       $sql = "DELETE FROM skills WHERE id = ('$_GET[id]')";
     
       if(mysqli_query($link, $sql)){
-          echo "Records added successfully.";
+//          echo "Records added successfully.";
       } else{
-          echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+//          echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
       }
     
     // close connection
@@ -64,6 +64,8 @@
         <!-- Font Awesome JS -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+        
+
         
     </head>
     <body>
