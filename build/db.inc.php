@@ -2,7 +2,7 @@
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
 define('DB_SERVER', 'db');
-define('DB_USERNAME', 'root');
+define('DB_USERNAME', 'skillsmatrixuser');
 define('DB_PASSWORD', '123456');
 define('DB_NAME', 'skillsmatrix');
  
