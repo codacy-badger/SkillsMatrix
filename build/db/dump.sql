@@ -87,7 +87,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'skillsmatrixuser','$2y$10$JwiDB1/6hpfnnEdTMmoz8.pjw0PZZcVeeY2HHvLh6Nipp.1tji8o6','2018-06-25 12:58:52');
+INSERT INTO `users` VALUES (1,'skillsmatrixuser','$2y$10$hoVN/tj3FCBlA2D3Pjsp0O1Uv7BdiZxA5bSLNg6B1PEbwP9N3Pwwe','2018-06-25 12:58:52');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
