@@ -22,8 +22,21 @@ Login page:
 ## Demo
 > **TBD**
 
-## Installation
-> **TBD**
+## Installation / Get Started
+
+### Pre-requisites
+
+* Docker
+* Docker Compose(Windows and MacOS already include this on the standard Docker install)
+
+### Step by step
+
+1. #git clone https://github.com/luiz1361/SkillsMatrix.git
+2. #cd ./build
+3. #./init.sh(Linux) or ./init.ps1(Windows)
+4. #cd ./www (Web files are located here)
+5. Browse to http://127.0.0.1/public
+6: Username: skillsmatrixuser and Password: 123456
 
 # Documentation
 > **TBD**
