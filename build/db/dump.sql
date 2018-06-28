@@ -20,7 +20,10 @@
 -- Table structure for table `skills`
 --
 
-CREATE USER `skillsmatrixuser`@`localhost` IDENTIFIED BY `123456`;
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES ('localhost','skillsmatrixuser','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9','N','2018-06-26 08:27:17',NULL,'N');
+
 CREATE USER `GRANT ALL PRIVILEGES ON skillsmatrix.* TO `skillsmatrixuser`@`localhost`;
 
 DROP TABLE IF EXISTS `skills`;
