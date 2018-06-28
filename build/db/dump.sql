@@ -16,9 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-CREATE USER 'skillsmatrixuser'@'%' IDENTIFIED BY '123456';
-GRANT ALL PRIVILEGES ON skillsmatrix.* TO 'skillsmatrixuser'@'localhost';
-
 --
 -- Table structure for table `skills`
 --
