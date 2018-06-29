@@ -11,15 +11,15 @@
     if(isset($_POST['skill'])){
         require_once '../private/db.inc.php';
         mysqli_select_db($link,'skillsmatrix');
-      
+
         $sql = "INSERT INTO skills (description) VALUES (UPPER('$_POST[skill]'))";
-      
+
         if(mysqli_query($link, $sql)){
 //            echo "Records added successfully.";
         } else{
 //            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
         }
-      
+
       // close connection
       mysqli_close($link);
       header("location: skillslist.php");
@@ -29,15 +29,15 @@
     if(isset($_GET['id'])){
       require_once '../private/db.inc.php';
       mysqli_select_db($link,'skillsmatrix');
-    
+
       $sql = "DELETE FROM skills WHERE id = ('$_GET[id]')";
-    
+
       if(mysqli_query($link, $sql)){
 //          echo "Records added successfully.";
       } else{
 //          echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
       }
-    
+
     // close connection
     mysqli_close($link);
     header("location: skillslist.php");
@@ -45,8 +45,9 @@
     }
 ?>
 
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +57,7 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
         <!-- Bootstrap CSS CDN -->
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
 
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/sidebar.css">
@@ -64,10 +65,9 @@
         <!-- Font Awesome JS -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-        
 
-        
     </head>
+
     <body>
         <div class="wrapper">
             <!-- Sidebar Holder -->
@@ -77,10 +77,10 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                <li class="active">
-                </li>
+                    <li class="active">
+                    </li>
                     <li>
-                        <a href="welcome.php">Home</a>
+                        <a href="home.php">Home</a>
                     </li>
                     <li>
                         <a href="#">My Skills</a>
@@ -92,26 +92,55 @@
                         <a href="#">People</a>
                     </li>
                     <li>
-                        
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reports</a>
+
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administration</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
-                                <a href="#">By Skills</a>
+
+                                <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Reports</a>
+                                <ul class="collapse " id="pageSubmenu2">
+                                    <li>
+                                        <a href="#">By Skills</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">By Individual</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
-                                <a href="#">By Individual</a>
+                                <a href="#">Manage Skills List</a>
                             </li>
+                            <li>
+                                <a href="#">Manage People</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Departments</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Locations</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Roles</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Rooms</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Permissions</a>
+                            </li>
+
                         </ul>
                     </li>
                 </ul>
 
                 <ul class="list-unstyled CTAs">
-                    
-                    Logged as <?php echo htmlspecialchars($_SESSION['username']); ?>
-                    
-                    <li>
-                        <a href="logout.php" class="article">Sign out</a>
-                    </li>
+
+                    Logged as
+                    <?php echo htmlspecialchars($_SESSION['username']); ?>
+
+                        <li>
+                            <a href="logout.php" class="article">Sign out</a>
+                        </li>
                 </ul>
             </nav>
 
@@ -133,7 +162,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                <p><a href="all_skills.php" class="btn btn-success">All Skills</a> <a href="my_skills.php" class="btn btn-danger">My Skills</a> <a href="logout.php" class="btn btn-warning">Sign Out</a></p>
+                                    <p><a href="all_skills.php" class="btn btn-success">All Skills</a> <a href="my_skills.php" class="btn btn-danger">My Skills</a> <a href="logout.php" class="btn btn-warning">Sign Out</a></p>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Page</a>
@@ -148,7 +177,7 @@
                         </div>
                     </div>
                 </nav>
-                
+
                 <?php
                 require_once '../private/db.inc.php';
 
@@ -161,18 +190,19 @@
                 }
                 echo "<table id='table' class='table table-striped table-bordered' align='center' data-sorting='true' style='max-width: 70%;text-align:left' ><thead><tr><th>ID</th><th>Description</th><th>Created At</th><th>Delete</th></tr></thead><tbody>";
                 while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
-                echo "<tr><td>".$row["id"]."</td><td>".$row["description"]."</td><td>".$row["created_at"]."</td><td><button class='btn btn-default'><a href='skillslist.php?id=".$row['id']."'>Delete</a></button></td></tr>";
+                echo "<tr><td>".$row["id"]."</td><td>".$row["description"]."</td><td>".$row["created_at"]."</td><td><button class='btn btn-default'><a href='skillslist.php?id=".$row['id']."' onClick='return confirm(\"Are you sure?\");' >Delete</a></button></td></tr>";
                 }
                         echo "</tbody></table>";
 
                 mysqli_close($link);
                 ?>
 
-                <form class="form-inline justify-content-center" action="skillslist.php" method="post">
-                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="skill" id="inlineFormInput" placeholder="ie. VLAN">
-                    <button type="submit" class="btn btn-primary">Add</button>
-                </form>  
-            
+                    <form class="form-inline justify-content-center" action="skillslist.php" method="post">
+                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="skill" id="inlineFormInput" placeholder="ie. VLAN">
+                        <button type="submit" class="btn btn-primary">Add</button>
+
+                    </form>
+
             </div>
         </div>
         <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -186,8 +216,8 @@
         <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
         <script type="text/javascript">
-            $(document).ready(function () {
-                $('#sidebarCollapse').on('click', function () {
+            $(document).ready(function() {
+                $('#sidebarCollapse').on('click', function() {
                     $('#sidebar').toggleClass('active');
                     $(this).toggleClass('active');
                 });
@@ -195,10 +225,13 @@
         </script>
         <script>
             $(document).ready(function() {
-                $('#table').DataTable( {
-                    "order": [[ 0, "desc" ]]
-                } );
-            } );
+                $('#table').DataTable({
+                    "order": [
+                        [0, "desc"]
+                    ]
+                });
+            });
         </script>
     </body>
-</html>
+
+    </html>

@@ -9,8 +9,9 @@
     }
 ?>
 
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,7 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
         <!-- Bootstrap CSS CDN -->
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
 
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/sidebar.css">
@@ -28,8 +29,9 @@
         <!-- Font Awesome JS -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-        
+
     </head>
+
     <body>
         <div class="wrapper">
             <!-- Sidebar Holder -->
@@ -39,10 +41,10 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                <li class="active">
-                </li>
+                    <li class="active">
+                    </li>
                     <li>
-                        <a href="welcome.php">Home</a>
+                        <a href="home.php">Home</a>
                     </li>
                     <li>
                         <a href="#">My Skills</a>
@@ -54,26 +56,55 @@
                         <a href="#">People</a>
                     </li>
                     <li>
-                        
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reports</a>
+
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administration</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
-                                <a href="#">By Skills</a>
+
+                                <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Reports</a>
+                                <ul class="collapse " id="pageSubmenu2">
+                                    <li>
+                                        <a href="#">By Skills</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">By Individual</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
-                                <a href="#">By Individual</a>
+                                <a href="#">Manage Skills List</a>
                             </li>
+                            <li>
+                                <a href="#">Manage People</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Departments</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Locations</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Roles</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Rooms</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Permissions</a>
+                            </li>
+
                         </ul>
                     </li>
                 </ul>
 
                 <ul class="list-unstyled CTAs">
-                    
-                    Logged as <?php echo htmlspecialchars($_SESSION['username']); ?>
-                    
-                    <li>
-                        <a href="logout.php" class="article">Sign out</a>
-                    </li>
+
+                    Logged as
+                    <?php echo htmlspecialchars($_SESSION['username']); ?>
+
+                        <li>
+                            <a href="logout.php" class="article">Sign out</a>
+                        </li>
                 </ul>
             </nav>
 
@@ -95,7 +126,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                <p><a href="all_skills.php" class="btn btn-success">All Skills</a> <a href="my_skills.php" class="btn btn-danger">My Skills</a> <a href="logout.php" class="btn btn-warning">Sign Out</a></p>
+                                    <p><a href="all_skills.php" class="btn btn-success">All Skills</a> <a href="my_skills.php" class="btn btn-danger">My Skills</a> <a href="logout.php" class="btn btn-warning">Sign Out</a></p>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Page</a>
@@ -110,7 +141,7 @@
                         </div>
                     </div>
                 </nav>
-                
+
                 <?php
                     require_once '../private/db.inc.php';
 
@@ -130,17 +161,17 @@
                     mysqli_close($link);
                 ?>
 
-                <h2>Collapsible Sidebar Using Bootstrap 4</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h2>Collapsible Sidebar Using Bootstrap 4</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-                <div class="line"></div>
+                    <div class="line"></div>
 
-                <h2>Lorem Ipsum Dolor</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h2>Lorem Ipsum Dolor</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-                <div class="line"></div>
-            
+                    <div class="line"></div>
+
             </div>
         </div>
         <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -154,8 +185,8 @@
         <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
         <script type="text/javascript">
-            $(document).ready(function () {
-                $('#sidebarCollapse').on('click', function () {
+            $(document).ready(function() {
+                $('#sidebarCollapse').on('click', function() {
                     $('#sidebar').toggleClass('active');
                     $(this).toggleClass('active');
                 });
@@ -163,10 +194,13 @@
         </script>
         <script>
             $(document).ready(function() {
-                $('#table').DataTable( {
-                    "order": [[ 0, "desc" ]]
-                } );
-            } );
+                $('#table').DataTable({
+                    "order": [
+                        [0, "desc"]
+                    ]
+                });
+            });
         </script>
     </body>
-</html>
+
+    </html>
