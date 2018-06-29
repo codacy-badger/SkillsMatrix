@@ -1,5 +1,5 @@
 # Skills Matrix
-[![CircleCI](https://circleci.com/gh/luiz1361/SkillsMatrix.svg?style=svg)](https://circleci.com/gh/luiz1361/SkillsMatrix) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![codebeat badge](https://codebeat.co/badges/af8254f0-55dd-4bbd-8397-626c83554cd0)](https://codebeat.co/projects/github-com-luiz1361-skillsmatrix-master)
+[![CircleCI](https://circleci.com/gh/luiz1361/SkillsMatrix.svg?style=svg)](https://circleci.com/gh/luiz1361/SkillsMatrix) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![codebeat badge](https://codebeat.co/badges/af8254f0-55dd-4bbd-8397-626c83554cd0)](https://codebeat.co/projects/github-com-luiz1361-skillsmatrix-master)[![codecov](https://codecov.io/gh/luiz1361/SkillsMatrix/branch/master/graph/badge.svg)](https://codecov.io/gh/luiz1361/SkillsMatrix)
 
 This web application was build with the goal of providing an easy way to track skills of individuals within an organization.
 
