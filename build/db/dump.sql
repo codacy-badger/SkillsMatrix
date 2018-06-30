@@ -272,12 +272,12 @@ CREATE TABLE `people` (
   `status` int(11) NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
-  FOREIGN KEY fk_title(title) REFERENCES id(title),
-  FOREIGN KEY fk_department(department) REFERENCES id(description),
-  FOREIGN KEY fk_position(position) REFERENCES id(description),
-  FOREIGN KEY fk_location(location) REFERENCES id(description),
-  FOREIGN KEY fk_room(room) REFERENCES id(description),
-  FOREIGN KEY fk_status(status) REFERENCES id(description)
+  FOREIGN KEY fk_title(title) REFERENCES titles(id),
+  FOREIGN KEY fk_department(department) REFERENCES departments(id),
+  FOREIGN KEY fk_position(position) REFERENCES positions(id),
+  FOREIGN KEY fk_location(location) REFERENCES locations(id),
+  FOREIGN KEY fk_room(room) REFERENCES rooms(id),
+  FOREIGN KEY fk_status(status) REFERENCES statuses(id)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
