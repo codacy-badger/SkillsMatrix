@@ -48,8 +48,9 @@ DROP TABLE IF EXISTS `skills`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `skills` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) NOT NULL UNIQUE,
+  `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -73,8 +74,9 @@ DROP TABLE IF EXISTS `positions`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `positions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) NOT NULL UNIQUE,
+  `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -98,8 +100,9 @@ DROP TABLE IF EXISTS `titles`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `titles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) NOT NULL UNIQUE,
+  `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -123,8 +126,9 @@ DROP TABLE IF EXISTS `rooms`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `rooms` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) NOT NULL UNIQUE,
+  `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -148,8 +152,9 @@ DROP TABLE IF EXISTS `permissions`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `permissions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) NOT NULL UNIQUE,
+  `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -174,8 +179,9 @@ DROP TABLE IF EXISTS `locations`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `locations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) NOT NULL UNIQUE,
+  `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -199,8 +205,9 @@ DROP TABLE IF EXISTS `departments`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `departments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) NOT NULL UNIQUE,
+  `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -225,8 +232,9 @@ DROP TABLE IF EXISTS `statuses`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `statuses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) NOT NULL UNIQUE,
+  `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -251,12 +259,12 @@ DROP TABLE IF EXISTS `people`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `people` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL UNIQUE,
+  `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `firstname` varchar(100) NULL,
   `lastname` varchar(100) NULL,
   `dateofbirth` date NULL,
-  `email` varchar(255) NULL UNIQUE,
+  `email` varchar(255) NULL,
   `extension` varchar(255) NULL,
   `phone` varchar(255) NULL,
   `mobile` varchar(255) NULL,
@@ -272,6 +280,7 @@ CREATE TABLE `people` (
   `status` int(11) NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`),
   FOREIGN KEY fk_title(title) REFERENCES titles(id),
   FOREIGN KEY fk_department(department) REFERENCES departments(id),
   FOREIGN KEY fk_position(position) REFERENCES positions(id),
