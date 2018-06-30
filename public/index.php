@@ -80,9 +80,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<style>
 		body {
-			background-color: #47A9D2;
+			background-color: #333333;
 		}
 		</style>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?tracking=1&thirdparty=1&always=1&noGeoIp=1&scrolling=1&refreshPage=1&showNoConsent=1&hideDetailsBtn=1"></script>
 	</head>
 	<body id="particles-js">
 		<form <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -186,7 +187,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				<input type="password" name="password" id="password" class="password form-control" placeholder="Password"/>
 			</div>
 			<div class="form-group"></div>
-				<button id="login" type="submit" value="Login" class="btn btn-block btn-primary">Log in</button>
+				<button id="login" type="submit" value="Login" class="btn btn-block btn-info">Log in</button>
 			</div>
 			<p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
 		</form>
