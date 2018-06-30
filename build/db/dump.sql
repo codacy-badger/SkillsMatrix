@@ -65,13 +65,13 @@ INSERT INTO `skills` VALUES (1,'CISCO','2018-06-27 17:32:30'),(2,'RADIUS','2018-
 UNLOCK TABLES;
 
 --
--- Table structure for table `roles`
+-- Table structure for table `position`
 --
 
-DROP TABLE IF EXISTS `roles`;
+DROP TABLE IF EXISTS `position`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `roles` (
+CREATE TABLE `position` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -80,13 +80,38 @@ CREATE TABLE `roles` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `skills`
+-- Dumping data for table `position`
 --
 
-LOCK TABLES `roles` WRITE;
-/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES (1,'SYSTEMS ADMINISTRATOR','2018-06-27 17:32:30'),(2,'IT MANAGER','2018-06-27 17:34:22'),(3,'WEB DEVELOPER','2018-06-28 03:00:03');
-/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+LOCK TABLES `position` WRITE;
+/*!40000 ALTER TABLE `position` DISABLE KEYS */;
+INSERT INTO `position` VALUES (1,'SYSTEMS ADMINISTRATOR','2018-06-27 17:32:30'),(2,'IT MANAGER','2018-06-27 17:34:22'),(3,'WEB DEVELOPER','2018-06-28 03:00:03');
+/*!40000 ALTER TABLE `position` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `titles`
+--
+
+DROP TABLE IF EXISTS `titles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `titles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `titles`
+--
+
+LOCK TABLES `titles` WRITE;
+/*!40000 ALTER TABLE `titles` DISABLE KEYS */;
+INSERT INTO `titles` VALUES (1,'MR.','2018-06-27 17:32:30'),(2,'MISS.','2018-06-27 17:34:22'),(3,'MS.','2018-06-28 03:00:03');
+/*!40000 ALTER TABLE `titles` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -192,67 +217,80 @@ UNLOCK TABLES;
 
 
 --
--- Table structure for table `users`
+-- Table structure for table `statuses`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `statuses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
+CREATE TABLE `statuses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `statuses`
+--
+
+LOCK TABLES `statuses` WRITE;
+/*!40000 ALTER TABLE `statuses` DISABLE KEYS */;
+INSERT INTO `statuses` VALUES (1,'ACTIVE','2018-06-27 17:32:30'),(2,'INACTIVE','2018-06-27 17:34:22'),(3,'SICK LEAVE','2018-06-28 03:00:03');
+/*!40000 ALTER TABLE `statuses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+--
+-- Table structure for table `people`
+--
+
+DROP TABLE IF EXISTS `people`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `people` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `firstname` varchar(100) NULL,
+  `lastname` varchar(100) NULL,
+  `dateofbirth` date NULL,
+  `email` varchar(255) NULL,
+  `extension` varchar(255) NULL,
+  `phone` varchar(255) NULL,
+  `mobile` varchar(255) NULL,
+  `fax` varchar(255) NULL,
+  `comment` varchar(255) NULL,
+  `public` tinyint(4) NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `title` varchar(255) NULL,
+  `department` varchar(255) NULL,
+  `position` varchar(255) NULL,
+  `location` varchar(255) NULL,
+  `room` varchar(255) NULL,
+  `status` varchar(255) NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
+  UNIQUE KEY `username` (`username`),
+  FOREIGN KEY fk_title(title) REFERENCES titles(title),
+  FOREIGN KEY fk_department(department) REFERENCES departments(description),
+  FOREIGN KEY fk_position(position) REFERENCES positions(description),
+  FOREIGN KEY fk_location(location) REFERENCES locations(description),
+  FOREIGN KEY fk_room(room) REFERENCES rooms(description),
+  FOREIGN KEY fk_status(status) REFERENCES statuses(description)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `people`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'skillsmatrixuser','$2y$10$hoVN/tj3FCBlA2D3Pjsp0O1Uv7BdiZxA5bSLNg6B1PEbwP9N3Pwwe','2018-06-25 12:58:52');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `people` WRITE;
+/*!40000 ALTER TABLE `people` DISABLE KEYS */;
+INSERT INTO `people` VALUES (1,'skillsmatrixuser','$2y$10$hoVN/tj3FCBlA2D3Pjsp0O1Uv7BdiZxA5bSLNg6B1PEbwP9N3Pwwe','2018-06-25 12:58:52');
+/*!40000 ALTER TABLE `people` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `users_skills`
---
-
-DROP TABLE IF EXISTS `users_skills`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users_skills` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userid` int(11) NOT NULL,
-  `skillid` int(11) NOT NULL,
-  `level` int(11) NOT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users_skills`
---
-
-LOCK TABLES `users_skills` WRITE;
-/*!40000 ALTER TABLE `users_skills` DISABLE KEYS */;
-INSERT INTO `users_skills` VALUES (2,123,123,123,'2018-06-25 17:30:40');
-/*!40000 ALTER TABLE `users_skills` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 
 GRANT ALL PRIVILEGES ON skillsmatrix.* TO 'skillsmatrixuser'@'localhost';

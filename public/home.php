@@ -52,7 +52,7 @@
                         <a href="#"><i class="fas fa-user"></i> My Skills</a>
                     </li>
                     <li>
-                        <a href="skillslist.php"><i class="fas fa-wrench"></i> Skills List</a>
+                        <a href="skillsr.php"><i class="fas fa-wrench"></i> Skills</a>
                     </li>
                     <li>
                         <a href="#"><i class="fas fa-users"></i> People</a>
@@ -74,7 +74,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Manage Skills List</a>
+                                <a href="#">Manage Skills</a>
                             </li>
                             <li>
                                 <a href="#">Manage People</a>
@@ -86,13 +86,16 @@
                                 <a href="#">Manage Locations</a>
                             </li>
                             <li>
-                                <a href="#">Manage Roles</a>
+                                <a href="#">Manage Positions</a>
                             </li>
                             <li>
                                 <a href="#">Manage Rooms</a>
                             </li>
                             <li>
                                 <a href="#">Manage Permissions</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Titles</a>
                             </li>
 
                         </ul>
@@ -138,7 +141,7 @@
                 <?php
                     require_once '../private/db.inc.php';
 
-                    $sql = 'SELECT * FROM users';
+                    $sql = 'SELECT * FROM people';
                     mysqli_select_db($link,'skillsmatrix');
                     $retval = mysqli_query( $link, $sql);
 
