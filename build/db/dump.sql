@@ -264,20 +264,20 @@ CREATE TABLE `people` (
   `comment` varchar(255) NULL,
   `public` tinyint(4) NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  `title` varchar(255) NULL,
-  `department` varchar(255) NULL,
-  `position` varchar(255) NULL,
-  `location` varchar(255) NULL,
-  `room` varchar(255) NULL,
-  `status` varchar(255) NULL,
+  `title` int(11) NULL,
+  `department` int(11) NULL,
+  `position` int(11) NULL,
+  `location` int(11) NULL,
+  `room` int(11) NULL,
+  `status` int(11) NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
-  FOREIGN KEY fk_title(title) REFERENCES titles(title),
-  FOREIGN KEY fk_department(department) REFERENCES departments(description),
-  FOREIGN KEY fk_position(position) REFERENCES positions(description),
-  FOREIGN KEY fk_location(location) REFERENCES locations(description),
-  FOREIGN KEY fk_room(room) REFERENCES rooms(description),
-  FOREIGN KEY fk_status(status) REFERENCES statuses(description)
+  FOREIGN KEY fk_title(title) REFERENCES id(title),
+  FOREIGN KEY fk_department(department) REFERENCES id(description),
+  FOREIGN KEY fk_position(position) REFERENCES id(description),
+  FOREIGN KEY fk_location(location) REFERENCES id(description),
+  FOREIGN KEY fk_room(room) REFERENCES id(description),
+  FOREIGN KEY fk_status(status) REFERENCES id(description)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
