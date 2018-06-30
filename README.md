@@ -20,9 +20,11 @@ function workInProgress(donation) {
 
 ## Screenshots
 Login page: 
+
 ![alt text](https://github.com/luiz1361/SkillsMatrix/raw/master/docs/screenshots/login.png)
 
 Skills List page:
+
 ![alt text](https://github.com/luiz1361/SkillsMatrix/raw/master/docs/screenshots/skillslist.png)
 
 ## Demo
