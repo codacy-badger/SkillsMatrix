@@ -46,6 +46,7 @@ Login page:
 * https://dribbble.com/shots/4249163-Animated-login-form-avatar
 * https://datatables.net/examples/basic_init/table_sorting.html
 * https://bootstrapious.com/p/bootstrap-sidebar
+* https://cookie-bar.eu/
 
 # License
 SkillsMatrix is GPLv3+.
