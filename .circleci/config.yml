@@ -25,3 +25,6 @@ jobs:
       - run:
           name: Mysql database
           command: mysql -h 127.0.0.1 -u root -e "create database skillsmatrix;"
+      - run:
+          name: Codecov
+          command: bash <(curl -s https://codecov.io/bash) 
