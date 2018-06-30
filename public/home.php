@@ -44,24 +44,24 @@
                     <li class="active">
                     </li>
                     <li>
-                        <a href="home.php">Home</a>
+                        <a href="home.php"><i class="fas fa-home"></i> Home</a>
                     </li>
                     <li>
-                        <a href="#">My Skills</a>
+                        <a href="#"><i class="fas fa-user"></i> My Skills</a>
                     </li>
                     <li>
-                        <a href="skillslist.php">Skills List</a>
+                        <a href="skillslist.php"><i class="fas fa-wrench"></i> Skills List</a>
                     </li>
                     <li>
-                        <a href="#">People</a>
+                        <a href="#"><i class="fas fa-users"></i> People</a>
                     </li>
                     <li>
 
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Administration</a>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-cog"></i> Administration</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
 
-                                <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Reports</a>
+                                <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle"><i class="fas fa-chart-pie"></i> Reports</a>
                                 <ul class="collapse " id="pageSubmenu2">
                                     <li>
                                         <a href="#">By Skills</a>
@@ -103,7 +103,7 @@
                     <?php echo htmlspecialchars($_SESSION['username']); ?>
 
                         <li>
-                            <a href="logout.php" class="article">Sign out</a>
+                            <a href="logout.php" class="article"><i class="fas fa-sign-out-alt"></i> Sign out</a>
                         </li>
                 </ul>
             </nav>
@@ -126,16 +126,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <p><a href="all_skills.php" class="btn btn-success">All Skills</a> <a href="my_skills.php" class="btn btn-danger">My Skills</a> <a href="logout.php" class="btn btn-warning">Sign Out</a></p>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Page</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Page</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Page</a>
+                                    <p><a href="mailto:luiz1361@gmail.com?Subject=SkillsMatrix Bug Report" target="_top"" class="btn btn-danger"><i class="fas fa-bug"></i> Report a Bug</a> <a href="#" class="btn article" onclick="window.print();return false;"><i class="fa fa-print"></i> Print</a></p>
                                 </li>
                             </ul>
                         </div>

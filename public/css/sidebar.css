@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    background: #FFFFFF;
 }
 
 p {
@@ -16,7 +16,9 @@ p {
     line-height: 1.7em;
     color: #999;
 }
-
+.bg-light{
+    background-color: #f7f7f7 !important
+}
 a, a:hover, a:focus {
     color: inherit;
     text-decoration: none;
@@ -60,7 +62,7 @@ a, a:hover, a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #3d93b8;
+    background: #333333;
     color: #fff;
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
@@ -73,12 +75,12 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #47A9D2;
+    background: #444444;
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    padding: 10px 0;
+    border-bottom: 1px solid #ffffff;
 }
 
 #sidebar ul p {
@@ -92,13 +94,13 @@ a, a:hover, a:focus {
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #3d93b8;
+    color: #000000;
     background: #fff;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #47A9D2;
+    background: #565656;
 }
 
 
@@ -117,7 +119,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #47A9D2;
+    background: #484848;
 }
 
 ul.CTAs {
@@ -157,7 +159,7 @@ a.article, a.article:hover {
 #sidebarCollapse {
     width: 40px;
     height: 40px;
-    background: #f5f5f5;
+    background: #444444;
     cursor: pointer;
 }
 
@@ -166,7 +168,7 @@ a.article, a.article:hover {
     height: 2px;
     margin: 0 auto;
     display: block;
-    background: #555;
+    background: rgb(255, 255, 255);
     transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
     transition-delay: 0.2s;
 }

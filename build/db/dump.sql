@@ -60,8 +60,58 @@ CREATE TABLE `skills` (
 
 LOCK TABLES `skills` WRITE;
 /*!40000 ALTER TABLE `skills` DISABLE KEYS */;
-INSERT INTO `skills` VALUES (31,'CISCO','2018-06-27 17:32:30'),(32,'RADIUS','2018-06-27 17:34:22'),(33,'VLAN','2018-06-28 03:00:03');
+INSERT INTO `skills` VALUES (1,'CISCO','2018-06-27 17:32:30'),(2,'RADIUS','2018-06-27 17:34:22'),(3,'VLAN','2018-06-28 03:00:03');
 /*!40000 ALTER TABLE `skills` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `roles`
+--
+
+DROP TABLE IF EXISTS `roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `skills`
+--
+
+LOCK TABLES `roles` WRITE;
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` VALUES (1,'SYSTEMS ADMINISTRATOR','2018-06-27 17:32:30'),(2,'IT MANAGER','2018-06-27 17:34:22'),(3,'WEB DEVELOPER','2018-06-28 03:00:03');
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rooms`
+--
+
+DROP TABLE IF EXISTS `rooms`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rooms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rooms`
+--
+
+LOCK TABLES `rooms` WRITE;
+/*!40000 ALTER TABLE `rooms` DISABLE KEYS */;
+INSERT INTO `rooms` VALUES (1,'W001','2018-06-27 17:32:30'),(2,'W001','2018-06-27 17:34:22'),(3,'W002','2018-06-28 03:00:03');
+/*!40000 ALTER TABLE `rooms` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
