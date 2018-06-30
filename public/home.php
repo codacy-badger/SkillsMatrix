@@ -52,7 +52,7 @@
                         <a href="#"><i class="fas fa-user"></i> My Skills</a>
                     </li>
                     <li>
-                        <a href="skillsr.php"><i class="fas fa-wrench"></i> Skills</a>
+                        <a href="skills.php"><i class="fas fa-wrench"></i> Skills</a>
                     </li>
                     <li>
                         <a href="#"><i class="fas fa-users"></i> People</a>
@@ -157,17 +157,12 @@
                     mysqli_close($link);
                 ?>
 
-                    <h2>Collapsible Sidebar Using Bootstrap 4</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p></p>
+                    <p></p>
+                    <h2>H2 Title</h2>
+                    <p>Paragraph</p>
 
                     <div class="line"></div>
-
-                    <h2>Lorem Ipsum Dolor</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                    <div class="line"></div>
-
             </div>
         </div>
         <!-- jQuery CDN - Slim version (=without AJAX) -->

@@ -22,7 +22,7 @@
 
       // close connection
       mysqli_close($link);
-      header("location: skillsr.php");
+      header("location: skills.php");
       exit;
       }
 
@@ -40,7 +40,7 @@
 
     // close connection
     mysqli_close($link);
-    header("location: skillsr.php");
+    header("location: skills.php");
     exit;
     }
 ?>
@@ -86,7 +86,7 @@
                         <a href="#"><i class="fas fa-user"></i> My Skills</a>
                     </li>
                     <li>
-                        <a href="skillsr.php"><i class="fas fa-wrench"></i> Skills</a>
+                        <a href="skills.php"><i class="fas fa-wrench"></i> Skills</a>
                     </li>
                     <li>
                         <a href="#"><i class="fas fa-users"></i> People</a>
@@ -184,14 +184,14 @@
                 }
                 echo "<table id='table' class='table table-striped table-bordered' align='center' data-sorting='true' style='max-width: 70%;text-align:left' ><thead><tr><th>ID</th><th>Description</th><th>Created At</th><th>Delete</th></tr></thead><tbody>";
                 while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
-                echo "<tr><td>".$row["id"]."</td><td>".$row["description"]."</td><td>".$row["created_at"]."</td><td><button class='btn btn-default'><a href='skillsr.php?id=".$row['id']."' onClick='return confirm(\"Are you sure?\");' >Delete</a></button></td></tr>";
+                echo "<tr><td>".$row["id"]."</td><td>".$row["description"]."</td><td>".$row["created_at"]."</td><td><button class='btn btn-default'><a href='skills.php?id=".$row['id']."' onClick='return confirm(\"Are you sure?\");' >Delete</a></button></td></tr>";
                 }
                         echo "</tbody></table>";
 
                 mysqli_close($link);
                 ?>
 
-                    <form class="form-inline justify-content-center" action="skillsr.php" method="post">
+                    <form class="form-inline justify-content-center" action="skills.php" method="post">
                         <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="skill" id="inlineFormInput" placeholder="ie. VLAN">
                         <button type="submit" class="btn btn-primary">Add</button>
 
