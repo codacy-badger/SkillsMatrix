@@ -285,7 +285,14 @@ CREATE TABLE `people` (
 -- Dumping data for table `people`
 --
 
-LOCK TABLES `people` WRITE;
+LOCK TABLES 
+  `people` WRITE,
+  `titles` WRITE,
+  `departments` WRITE,
+  `positions` WRITE,
+  `locations` WRITE,
+  `rooms` WRITE,
+  `statuses` WRITE;
 /*!40000 ALTER TABLE `people` DISABLE KEYS */;
 INSERT INTO `people`
 SET username = 'skillsmatrixuser',
@@ -302,7 +309,7 @@ SET username = 'skillsmatrixuser',
     public = '1',
     title = ( SELECT id FROM titles WHERE description = 'Mr.' LIMIT 1),
     department = ( SELECT id FROM departments WHERE description = 'IT SERVICES' LIMIT 1),
-    position = ( SELECT id FROM position WHERE description = 'SYSTEMS ADMINISTRATOR' LIMIT 1),
+    position = ( SELECT id FROM positions WHERE description = 'SYSTEMS ADMINISTRATOR' LIMIT 1),
     location = ( SELECT id FROM locations WHERE description = 'DUBLIN' LIMIT 1),
     room = ( SELECT id FROM rooms WHERE description = 'W001' LIMIT 1),
     status = ( SELECT id FROM statuses WHERE description = 'ACTIVE' LIMIT 1);
