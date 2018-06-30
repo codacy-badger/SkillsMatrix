@@ -3,12 +3,15 @@
 
 This web application was build with the goal of providing an easy way to track skills of individuals within an organization.
 
+## Donation
+
 ```javascript
 function workInProgress(donation) {
+    var coffee = donation;
     var wip = 0;
-    while (donation > 0 ){
+    while (coffee > 0 ){
         wip++;
-        donation--;
+        coffee--;
     }
     return wip
 }
@@ -18,6 +21,9 @@ function workInProgress(donation) {
 ## Screenshots
 Login page: 
 ![alt text](https://github.com/luiz1361/SkillsMatrix/raw/master/docs/screenshots/login.png)
+
+Skills List page:
+![alt text](https://github.com/luiz1361/SkillsMatrix/raw/master/docs/screenshots/skillslist.png)
 
 ## Demo
 > **TBD**
