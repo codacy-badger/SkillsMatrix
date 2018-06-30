@@ -65,13 +65,13 @@ INSERT INTO `skills` VALUES (1,'CISCO','2018-06-27 17:32:30'),(2,'RADIUS','2018-
 UNLOCK TABLES;
 
 --
--- Table structure for table `position`
+-- Table structure for table `positions`
 --
 
-DROP TABLE IF EXISTS `position`;
+DROP TABLE IF EXISTS `positions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `position` (
+CREATE TABLE `positions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -80,13 +80,13 @@ CREATE TABLE `position` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `position`
+-- Dumping data for table `positions`
 --
 
-LOCK TABLES `position` WRITE;
-/*!40000 ALTER TABLE `position` DISABLE KEYS */;
-INSERT INTO `position` VALUES (1,'SYSTEMS ADMINISTRATOR','2018-06-27 17:32:30'),(2,'IT MANAGER','2018-06-27 17:34:22'),(3,'WEB DEVELOPER','2018-06-28 03:00:03');
-/*!40000 ALTER TABLE `position` ENABLE KEYS */;
+LOCK TABLES `positions` WRITE;
+/*!40000 ALTER TABLE `positions` DISABLE KEYS */;
+INSERT INTO `positions` VALUES (1,'SYSTEMS ADMINISTRATOR','2018-06-27 17:32:30'),(2,'IT MANAGER','2018-06-27 17:34:22'),(3,'WEB DEVELOPER','2018-06-28 03:00:03');
+/*!40000 ALTER TABLE `positions` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -135,7 +135,7 @@ CREATE TABLE `rooms` (
 
 LOCK TABLES `rooms` WRITE;
 /*!40000 ALTER TABLE `rooms` DISABLE KEYS */;
-INSERT INTO `rooms` VALUES (1,'W001','2018-06-27 17:32:30'),(2,'W001','2018-06-27 17:34:22'),(3,'W002','2018-06-28 03:00:03');
+INSERT INTO `rooms` VALUES (1,'W001','2018-06-27 17:32:30'),(2,'W002','2018-06-27 17:34:22'),(3,'W003','2018-06-28 03:00:03');
 /*!40000 ALTER TABLE `rooms` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -287,7 +287,26 @@ CREATE TABLE `people` (
 
 LOCK TABLES `people` WRITE;
 /*!40000 ALTER TABLE `people` DISABLE KEYS */;
-INSERT INTO `people` (username, password) VALUES ('skillsmatrixuser','$2y$10$hoVN/tj3FCBlA2D3Pjsp0O1Uv7BdiZxA5bSLNg6B1PEbwP9N3Pwwe');
+INSERT INTO `people`
+SET username = 'skillsmatrixuser',
+    password = '$2y$10$hoVN/tj3FCBlA2D3Pjsp0O1Uv7BdiZxA5bSLNg6B1PEbwP9N3Pwwe',
+    firstname = 'Skills',
+    lastname = 'Matrix',
+    dateofbirth = '01/01/01',
+    email = 'skillsmatrix@skillsmatrix.com',
+    extension = '666',
+    phone = '6666666',
+    mobile = '6666666',
+    fax = '6666666',
+    comment = 'Place Holder',
+    public = '1',
+    title = ( SELECT id FROM titles WHERE description = 'Mr.' LIMIT 1),
+    department = ( SELECT id FROM departments WHERE description = 'IT SERVICES' LIMIT 1),
+    position = ( SELECT id FROM position WHERE description = 'SYSTEMS ADMINISTRATOR' LIMIT 1),
+    location = ( SELECT id FROM locations WHERE description = 'DUBLIN' LIMIT 1),
+    room = ( SELECT id FROM rooms WHERE description = 'W001' LIMIT 1),
+    status = ( SELECT id FROM statuses WHERE description = 'ACTIVE' LIMIT 1);
+
 /*!40000 ALTER TABLE `people` ENABLE KEYS */;
 UNLOCK TABLES;
 
