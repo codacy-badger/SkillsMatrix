@@ -54,7 +54,18 @@ Skills List page:
 4. **Username:** skillsmatrixuser and **Password:** 123456
 
 # Documentation
-> **TBD**
+
+## Database
+
+1. Normalization: break down tables until each table represents one and only one “thing”.
+2. Naming: Singular and consistent ie. person, person2Department.
+3. Documentation: Described in detail as much as possible.
+4. One table to hold all domain values: One table per "thing" and use relations as much as possible.
+5. Using identity/guid columns as your only key: Use other identifiable columns as fk pkeys.
+6. Encoding: utf8_general_ci. Better performance than unicode.
+7. Engine: InnoDB, implements transactions, foreign keys and relationship constraints. Row-level locking and better crash recovery.
+
+
 
 # References
 * https://vincentgarreau.com/particles.js/
