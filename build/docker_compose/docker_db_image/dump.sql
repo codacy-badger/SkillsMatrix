@@ -6,6 +6,8 @@ UNLOCK TABLES;
 
 CREATE DATABASE `skillsmatrix` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+GRANT ALL PRIVILEGES ON skillsmatrix.* TO 'skillsmatrixuser'@'localhost';
+
 USE `skillsmatrix`;
 
 DROP TABLE IF EXISTS `skills`;
@@ -183,4 +185,3 @@ SET username = 'skillsmatrixuser',
     status = ( SELECT id FROM statuses WHERE description = 'ACTIVE' LIMIT 1);
 UNLOCK TABLES;
 
-GRANT ALL PRIVILEGES ON skillsmatrix.* TO 'skillsmatrixuser'@'localhost';
