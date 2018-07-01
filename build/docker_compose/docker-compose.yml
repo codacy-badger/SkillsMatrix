@@ -9,7 +9,7 @@ services:
     volumes:
       - ./www:/var/www/html
     links:
-      - db
+      - docker_db_image
 
   docker_db_image:
     build: docker_db_image
