@@ -41,14 +41,14 @@ Skills List page:
 
 #### Linux and MacOS
 
-1. #git clone https://github.com/luiz1361/SkillsMatrix.git && cd SkillsMatrix/build && ./init.sh
+1. #git clone https://github.com/luiz1361/SkillsMatrix.git && cd SkillsMatrix/build && ./bash_init.sh
 2. #cd ./www **(Web files are located here)**
 3. **Browse to** http://127.0.0.1/public
 4. **Username:** skillsmatrixuser and **Password:** 123456
 
 #### Windows
 
-1. #git clone https://github.com/luiz1361/SkillsMatrix.git && cd SkillsMatrix/build && ./init.ps1
+1. #git clone https://github.com/luiz1361/SkillsMatrix.git && cd SkillsMatrix/build && ./win_init.ps1
 2. #cd ./www **(Web files are located here)**
 3. **Browse to** http://127.0.0.1/public
 4. **Username:** skillsmatrixuser and **Password:** 123456
