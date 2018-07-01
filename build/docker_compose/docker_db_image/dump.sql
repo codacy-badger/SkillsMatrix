@@ -6,9 +6,9 @@ UNLOCK TABLES;
 
 CREATE DATABASE `skillsmatrix` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-GRANT ALL PRIVILEGES ON skillsmatrix.* TO 'skillsmatrixuser'@'localhost';
-
 USE `skillsmatrix`;
+
+GRANT ALL PRIVILEGES ON skillsmatrix.* TO 'skillsmatrixuser'@'%';
 
 DROP TABLE IF EXISTS `skills`;
 
