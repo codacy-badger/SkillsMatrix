@@ -62,7 +62,7 @@ Skills List page:
 3. Documentation: Described in detail as much as possible.
 4. One table to hold all domain values: One table per "thing" and use relations as much as possible.
 5. Using identity/guid columns as your only key: Use other identifiable columns as fk pkeys.
-6. Encoding: utf8_general_ci. Better performance than unicode.
+6. Encoding: CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 7. Engine: InnoDB, implements transactions, foreign keys and relationship constraints. Row-level locking and better crash recovery.
 
 
