@@ -1,8 +1,8 @@
 version: '2'
 
 services:
-  web:
-    build: web
+  docker_web_image:
+    build: docker_web_image
     ports:
       - "80:80"
       - "443:443"
@@ -11,8 +11,8 @@ services:
     links:
       - db
 
-  db:
-    build: db
+  docker_db_image:
+    build: docker_db_image
     volumes:
      - ./mysql:/var/lib/mysql
     environment:
