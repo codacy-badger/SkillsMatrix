@@ -7,4 +7,4 @@ docker rmi docker_compose_docker_db_image
 docker rmi docker_compose_docker_web_image
 docker rmi mysql:5.7
 docker rmi php:7.0-apache
-rm -Rf ./mysql
+rm -Rf ./docker_compose/mysql
