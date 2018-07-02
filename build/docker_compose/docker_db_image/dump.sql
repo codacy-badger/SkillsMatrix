@@ -10,6 +10,44 @@ GRANT ALL PRIVILEGES ON skillsmatrix.* TO 'skillsmatrixuser'@'%';
 
 USE `skillsmatrix`;
 
+DROP TABLE IF EXISTS `person`;
+
+CREATE TABLE `person` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `firstname` varchar(100) NULL,
+  `lastname` varchar(100) NULL,
+  `dateofbirth` date NULL,
+  `email` varchar(255) NULL,
+  `extension` varchar(255) NULL,
+  `phone` varchar(255) NULL,
+  `mobile` varchar(255) NULL,
+  `fax` varchar(255) NULL,
+  `comment` varchar(255) NULL,
+  `public` int(11) NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
+
+LOCK TABLES `person` WRITE;
+INSERT INTO `person`
+SET username = 'skillsmatrixuser',
+    password = '$2y$10$hoVN/tj3FCBlA2D3Pjsp0O1Uv7BdiZxA5bSLNg6B1PEbwP9N3Pwwe',
+    firstname = 'Skills',
+    lastname = 'Matrix',
+    dateofbirth = '01/01/01',
+    email = 'skillsmatrix@skillsmatrix.com',
+    extension = '666',
+    phone = '6666666',
+    mobile = '6666666',
+    fax = '6666666',
+    comment = 'Place Holder',
+    public = '1';
+UNLOCK TABLES;
+
 DROP TABLE IF EXISTS `skill`;
 
 CREATE TABLE `skill` (
@@ -196,40 +234,3 @@ CREATE TABLE `personStatus` (
   FOREIGN KEY (statusid) REFERENCES status(id)
 ) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
-DROP TABLE IF EXISTS `person`;
-
-CREATE TABLE `person` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `firstname` varchar(100) NULL,
-  `lastname` varchar(100) NULL,
-  `dateofbirth` date NULL,
-  `email` varchar(255) NULL,
-  `extension` varchar(255) NULL,
-  `phone` varchar(255) NULL,
-  `mobile` varchar(255) NULL,
-  `fax` varchar(255) NULL,
-  `comment` varchar(255) NULL,
-  `public` int(11) NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
-
-LOCK TABLES `person` WRITE;
-INSERT INTO `person`
-SET username = 'skillsmatrixuser',
-    password = '$2y$10$hoVN/tj3FCBlA2D3Pjsp0O1Uv7BdiZxA5bSLNg6B1PEbwP9N3Pwwe',
-    firstname = 'Skills',
-    lastname = 'Matrix',
-    dateofbirth = '01/01/01',
-    email = 'skillsmatrix@skillsmatrix.com',
-    extension = '666',
-    phone = '6666666',
-    mobile = '6666666',
-    fax = '6666666',
-    comment = 'Place Holder',
-    public = '1';
-UNLOCK TABLES;
