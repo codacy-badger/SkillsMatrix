@@ -30,7 +30,7 @@
       require_once '../private/db.inc.php';
       mysqli_select_db($link,'skillsmatrix');
 
-      $sql = "DELETE FROM skills WHERE id = ('$_GET[id]')";
+      $sql = "DELETE FROM skill WHERE id = ('$_GET[id]')";
 
       if(mysqli_query($link, $sql)){
 //          echo "Records added successfully.";
@@ -184,7 +184,7 @@
                 }
                 echo "<table id='table' class='table table-striped table-bordered' align='center' data-sorting='true' style='max-width: 70%;text-align:left' ><thead><tr><th>ID</th><th>Description</th><th>Created At</th><th>Delete</th></tr></thead><tbody>";
                 while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
-                echo "<tr><td>".$row["id"]."</td><td>".$row["description"]."</td><td>".$row["created_at"]."</td><td><button class='btn btn-default'><a href='skills.php?id=".$row['id']."' onClick='return confirm(\"Are you sure?\");' >Delete</a></button></td></tr>";
+                echo "<tr><td>".$row["id"]."</td><td>".$row["description"]."</td><td>".$row["created_at"]."</td><td><button class='btn btn-default'><a href='skills.php?id=".$row['id']."' onClick='return confirm(\"This action is irreversible, are you sure?\");' >Delete</a></button></td></tr>";
                 }
                         echo "</tbody></table>";
 

@@ -20,6 +20,7 @@ CREATE TABLE `person` (
   `password` varchar(255) NOT NULL,
   `firstname` varchar(100) NULL,
   `lastname` varchar(100) NULL,
+  `staffid` varchar(100) NULL,
   `dateofbirth` date NULL,
   `email` varchar(255) NULL,
   `extension` varchar(255) NULL,
@@ -31,7 +32,8 @@ CREATE TABLE `person` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `email` (`email`)
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `staffid` (`staffid`)
 ) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES `person` WRITE;
@@ -40,6 +42,7 @@ SET username = 'skillsmatrixuser',
     password = '$2y$10$hoVN/tj3FCBlA2D3Pjsp0O1Uv7BdiZxA5bSLNg6B1PEbwP9N3Pwwe',
     firstname = 'Skills',
     lastname = 'Matrix',
+    staffid = '123456',
     dateofbirth = '01/01/01',
     email = 'skillsmatrix@skillsmatrix.com',
     extension = '666',
@@ -64,15 +67,31 @@ LOCK TABLES `skill` WRITE;
 INSERT INTO `skill` VALUES (1,'CISCO','2018-06-27 17:32:30'),(2,'RADIUS','2018-06-27 17:34:22'),(3,'VLAN','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `personSkill`;
+DROP TABLE IF EXISTS `level`;
 
-CREATE TABLE `personSkill` (
+CREATE TABLE `level` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `description` (`description`),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
+
+LOCK TABLES `level` WRITE;
+INSERT INTO `level` VALUES (1,'1','2018-06-27 17:32:30'),(2,'2','2018-06-27 17:34:22'),(3,'3','2018-06-28 03:00:03');
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `personSkillLevel`;
+
+CREATE TABLE `personSkillLevel` (
   `personid` int(11) NOT NULL,
   `skillid` int(11) NOT NULL,
+  `levelid` int(11) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`personid`,`skillid`),
+  PRIMARY KEY (`personid`,`skillid`,`levelid`),
   FOREIGN KEY (personid) REFERENCES person(id),
-  FOREIGN KEY (skillid) REFERENCES skill(id)
+  FOREIGN KEY (skillid) REFERENCES skill(id),
+  FOREIGN KEY (levelid) REFERENCES level(id)
 ) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 DROP TABLE IF EXISTS `role`;
@@ -161,7 +180,7 @@ CREATE TABLE `permission` (
 ) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES `permission` WRITE;
-INSERT INTO `permission` VALUES (1,'USER','2018-06-27 17:32:30'),(2,'MANAGER','2018-06-27 17:34:22'),(3,'ADMINISTRATOR','2018-06-28 03:00:03');
+INSERT INTO `permission` VALUES (1,'USER','2018-06-27 17:32:30'),(2,'SUPERVISOR','2018-06-27 17:34:22'),(3,'ADMINISTRATOR','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `personPermission`;
@@ -205,13 +224,15 @@ DROP TABLE IF EXISTS `department`;
 CREATE TABLE `department` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
+  `code` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
+  UNIQUE KEY `code` (`code`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES `department` WRITE;
-INSERT INTO `department` VALUES (1,'IT SERVICES','2018-06-27 17:32:30'),(2,'ADMINISTRATION','2018-06-27 17:34:22'),(3,'MARKETING','2018-06-28 03:00:03');
+INSERT INTO `department` VALUES (1,'IT SERVICES','ABC1','2018-06-27 17:32:30'),(2,'ADMINISTRATION','ABC2','2018-06-27 17:34:22'),(3,'MARKETING','ABC3','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `personDepartment`;
