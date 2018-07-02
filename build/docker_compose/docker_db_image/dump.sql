@@ -10,9 +10,9 @@ GRANT ALL PRIVILEGES ON skillsmatrix.* TO 'skillsmatrixuser'@'%';
 
 USE `skillsmatrix`;
 
-DROP TABLE IF EXISTS `skills`;
+DROP TABLE IF EXISTS `skill`;
 
-CREATE TABLE `skills` (
+CREATE TABLE `skill` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -20,8 +20,8 @@ CREATE TABLE `skills` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `skills` WRITE;
-INSERT INTO `skills` VALUES (1,'CISCO','2018-06-27 17:32:30'),(2,'RADIUS','2018-06-27 17:34:22'),(3,'VLAN','2018-06-28 03:00:03');
+LOCK TABLES `skill` WRITE;
+INSERT INTO `skill` VALUES (1,'CISCO','2018-06-27 17:32:30'),(2,'RADIUS','2018-06-27 17:34:22'),(3,'VLAN','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `position`;
@@ -66,9 +66,9 @@ LOCK TABLES `room` WRITE;
 INSERT INTO `room` VALUES (1,'W001','2018-06-27 17:32:30'),(2,'W002','2018-06-27 17:34:22'),(3,'W003','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `permissions`;
+DROP TABLE IF EXISTS `permission`;
 
-CREATE TABLE `permissions` (
+CREATE TABLE `permission` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -76,8 +76,8 @@ CREATE TABLE `permissions` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `permissions` WRITE;
-INSERT INTO `permissions` VALUES (1,'USER','2018-06-27 17:32:30'),(2,'MANAGER','2018-06-27 17:34:22'),(3,'ADMINISTRATOR','2018-06-28 03:00:03');
+LOCK TABLES `permission` WRITE;
+INSERT INTO `permission` VALUES (1,'USER','2018-06-27 17:32:30'),(2,'MANAGER','2018-06-27 17:34:22'),(3,'ADMINISTRATOR','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `location`;
