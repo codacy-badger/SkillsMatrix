@@ -18,11 +18,22 @@ CREATE TABLE `skill` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES `skill` WRITE;
 INSERT INTO `skill` VALUES (1,'CISCO','2018-06-27 17:32:30'),(2,'RADIUS','2018-06-27 17:34:22'),(3,'VLAN','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `personSkill`;
+
+CREATE TABLE `personSkill` (
+  `personid` int(11) NOT NULL,
+  `skillid` int(11) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`personid`,`skillid`),
+  FOREIGN KEY (personid) REFERENCES person(id),
+  FOREIGN KEY (skillid) REFERENCES skill(id)
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 DROP TABLE IF EXISTS `position`;
 
@@ -32,11 +43,20 @@ CREATE TABLE `position` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES `position` WRITE;
 INSERT INTO `position` VALUES (1,'SYSTEMS ADMINISTRATOR','2018-06-27 17:32:30'),(2,'IT MANAGER','2018-06-27 17:34:22'),(3,'WEB DEVELOPER','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+CREATE TABLE `personPosition` (
+  `personid` int(11) NOT NULL,
+  `positionid` int(11) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`personid`,`positionid`),
+  FOREIGN KEY (personid) REFERENCES person(id),
+  FOREIGN KEY (positionid) REFERENCES position(id)
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 DROP TABLE IF EXISTS `title`;
 
@@ -46,11 +66,20 @@ CREATE TABLE `title` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES `title` WRITE;
 INSERT INTO `title` VALUES (1,'MR.','2018-06-27 17:32:30'),(2,'MISS.','2018-06-27 17:34:22'),(3,'MS.','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+CREATE TABLE `personTitle` (
+  `personid` int(11) NOT NULL,
+  `titleid` int(11) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`personid`,`titleid`),
+  FOREIGN KEY (personid) REFERENCES person(id),
+  FOREIGN KEY (titleid) REFERENCES title(id)
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 DROP TABLE IF EXISTS `room`;
 
@@ -60,11 +89,20 @@ CREATE TABLE `room` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES `room` WRITE;
 INSERT INTO `room` VALUES (1,'W001','2018-06-27 17:32:30'),(2,'W002','2018-06-27 17:34:22'),(3,'W003','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+CREATE TABLE `personRoom` (
+  `personid` int(11) NOT NULL,
+  `roomid` int(11) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`personid`,`roomid`),
+  FOREIGN KEY (personid) REFERENCES person(id),
+  FOREIGN KEY (roomid) REFERENCES room(id)
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 DROP TABLE IF EXISTS `permission`;
 
@@ -74,11 +112,20 @@ CREATE TABLE `permission` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES `permission` WRITE;
 INSERT INTO `permission` VALUES (1,'USER','2018-06-27 17:32:30'),(2,'MANAGER','2018-06-27 17:34:22'),(3,'ADMINISTRATOR','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+CREATE TABLE `personPermission` (
+  `personid` int(11) NOT NULL,
+  `permissionid` int(11) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`personid`,`permissionid`),
+  FOREIGN KEY (personid) REFERENCES person(id),
+  FOREIGN KEY (permissionid) REFERENCES permission(id)
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 DROP TABLE IF EXISTS `location`;
 
@@ -88,11 +135,20 @@ CREATE TABLE `location` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES `location` WRITE;
 INSERT INTO `location` VALUES (1,'DUBLIN','2018-06-27 17:32:30'),(2,'LIMERICK','2018-06-27 17:34:22'),(3,'CORK','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+CREATE TABLE `personLocation` (
+  `personid` int(11) NOT NULL,
+  `locationid` int(11) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`personid`,`locationid`),
+  FOREIGN KEY (personid) REFERENCES person(id),
+  FOREIGN KEY (locationid) REFERENCES location(id)
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 DROP TABLE IF EXISTS `department`;
 
@@ -102,11 +158,20 @@ CREATE TABLE `department` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES `department` WRITE;
 INSERT INTO `department` VALUES (1,'IT SERVICES','2018-06-27 17:32:30'),(2,'ADMINISTRATION','2018-06-27 17:34:22'),(3,'MARKETING','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+CREATE TABLE `personDepartment` (
+  `personid` int(11) NOT NULL,
+  `departmentid` int(11) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`personid`,`locationid`),
+  FOREIGN KEY (personid) REFERENCES person(id),
+  FOREIGN KEY (departmentid) REFERENCES department(id)
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 DROP TABLE IF EXISTS `status`;
 
@@ -116,11 +181,20 @@ CREATE TABLE `status` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES `status` WRITE;
 INSERT INTO `status` VALUES (1,'ACTIVE','2018-06-27 17:32:30'),(2,'INACTIVE','2018-06-27 17:34:22'),(3,'SICK LEAVE','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+CREATE TABLE `personStatus` (
+  `personid` int(11) NOT NULL,
+  `statusid` int(11) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`personid`,`statusid`),
+  FOREIGN KEY (personid) REFERENCES person(id),
+  FOREIGN KEY (statusid) REFERENCES status(id)
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 DROP TABLE IF EXISTS `person`;
 
@@ -142,16 +216,9 @@ CREATE TABLE `person` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CharSet=utf8mb4;
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES 
-  `person` WRITE,
-  `title` WRITE,
-  `department` WRITE,
-  `position` WRITE,
-  `location` WRITE,
-  `room` WRITE,
-  `status` WRITE;
+LOCK TABLES `person` WRITE;
 INSERT INTO `person`
 SET username = 'skillsmatrixuser',
     password = '$2y$10$hoVN/tj3FCBlA2D3Pjsp0O1Uv7BdiZxA5bSLNg6B1PEbwP9N3Pwwe',
