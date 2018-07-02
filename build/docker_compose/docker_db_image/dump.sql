@@ -24,9 +24,9 @@ LOCK TABLES `skills` WRITE;
 INSERT INTO `skills` VALUES (1,'CISCO','2018-06-27 17:32:30'),(2,'RADIUS','2018-06-27 17:34:22'),(3,'VLAN','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `positions`;
+DROP TABLE IF EXISTS `position`;
 
-CREATE TABLE `positions` (
+CREATE TABLE `position` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -34,13 +34,13 @@ CREATE TABLE `positions` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `positions` WRITE;
-INSERT INTO `positions` VALUES (1,'SYSTEMS ADMINISTRATOR','2018-06-27 17:32:30'),(2,'IT MANAGER','2018-06-27 17:34:22'),(3,'WEB DEVELOPER','2018-06-28 03:00:03');
+LOCK TABLES `position` WRITE;
+INSERT INTO `position` VALUES (1,'SYSTEMS ADMINISTRATOR','2018-06-27 17:32:30'),(2,'IT MANAGER','2018-06-27 17:34:22'),(3,'WEB DEVELOPER','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `titles`;
+DROP TABLE IF EXISTS `title`;
 
-CREATE TABLE `titles` (
+CREATE TABLE `title` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -48,13 +48,13 @@ CREATE TABLE `titles` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `titles` WRITE;
-INSERT INTO `titles` VALUES (1,'MR.','2018-06-27 17:32:30'),(2,'MISS.','2018-06-27 17:34:22'),(3,'MS.','2018-06-28 03:00:03');
+LOCK TABLES `title` WRITE;
+INSERT INTO `title` VALUES (1,'MR.','2018-06-27 17:32:30'),(2,'MISS.','2018-06-27 17:34:22'),(3,'MS.','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `rooms`;
+DROP TABLE IF EXISTS `room`;
 
-CREATE TABLE `rooms` (
+CREATE TABLE `room` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -62,8 +62,8 @@ CREATE TABLE `rooms` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `rooms` WRITE;
-INSERT INTO `rooms` VALUES (1,'W001','2018-06-27 17:32:30'),(2,'W002','2018-06-27 17:34:22'),(3,'W003','2018-06-28 03:00:03');
+LOCK TABLES `room` WRITE;
+INSERT INTO `room` VALUES (1,'W001','2018-06-27 17:32:30'),(2,'W002','2018-06-27 17:34:22'),(3,'W003','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `permissions`;
@@ -80,9 +80,9 @@ LOCK TABLES `permissions` WRITE;
 INSERT INTO `permissions` VALUES (1,'USER','2018-06-27 17:32:30'),(2,'MANAGER','2018-06-27 17:34:22'),(3,'ADMINISTRATOR','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `locations`;
+DROP TABLE IF EXISTS `location`;
 
-CREATE TABLE `locations` (
+CREATE TABLE `location` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -90,13 +90,13 @@ CREATE TABLE `locations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `locations` WRITE;
-INSERT INTO `locations` VALUES (1,'DUBLIN','2018-06-27 17:32:30'),(2,'LIMERICK','2018-06-27 17:34:22'),(3,'CORK','2018-06-28 03:00:03');
+LOCK TABLES `location` WRITE;
+INSERT INTO `location` VALUES (1,'DUBLIN','2018-06-27 17:32:30'),(2,'LIMERICK','2018-06-27 17:34:22'),(3,'CORK','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `departments`;
+DROP TABLE IF EXISTS `department`;
 
-CREATE TABLE `departments` (
+CREATE TABLE `department` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -104,13 +104,13 @@ CREATE TABLE `departments` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `departments` WRITE;
-INSERT INTO `departments` VALUES (1,'IT SERVICES','2018-06-27 17:32:30'),(2,'ADMINISTRATION','2018-06-27 17:34:22'),(3,'MARKETING','2018-06-28 03:00:03');
+LOCK TABLES `department` WRITE;
+INSERT INTO `department` VALUES (1,'IT SERVICES','2018-06-27 17:32:30'),(2,'ADMINISTRATION','2018-06-27 17:34:22'),(3,'MARKETING','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `statuses`;
+DROP TABLE IF EXISTS `status`;
 
-CREATE TABLE `statuses` (
+CREATE TABLE `status` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -118,13 +118,13 @@ CREATE TABLE `statuses` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `statuses` WRITE;
-INSERT INTO `statuses` VALUES (1,'ACTIVE','2018-06-27 17:32:30'),(2,'INACTIVE','2018-06-27 17:34:22'),(3,'SICK LEAVE','2018-06-28 03:00:03');
+LOCK TABLES `status` WRITE;
+INSERT INTO `status` VALUES (1,'ACTIVE','2018-06-27 17:32:30'),(2,'INACTIVE','2018-06-27 17:34:22'),(3,'SICK LEAVE','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `people`;
+DROP TABLE IF EXISTS `person`;
 
-CREATE TABLE `people` (
+CREATE TABLE `person` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -148,23 +148,23 @@ CREATE TABLE `people` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
-  FOREIGN KEY fk_title(title) REFERENCES titles(id),
-  FOREIGN KEY fk_department(department) REFERENCES departments(id),
-  FOREIGN KEY fk_position(position) REFERENCES positions(id),
-  FOREIGN KEY fk_location(location) REFERENCES locations(id),
-  FOREIGN KEY fk_room(room) REFERENCES rooms(id),
-  FOREIGN KEY fk_status(status) REFERENCES statuses(id)
+  FOREIGN KEY fk_title(title) REFERENCES title(id),
+  FOREIGN KEY fk_department(department) REFERENCES department(id),
+  FOREIGN KEY fk_position(position) REFERENCES position(id),
+  FOREIGN KEY fk_location(location) REFERENCES location(id),
+  FOREIGN KEY fk_room(room) REFERENCES room(id),
+  FOREIGN KEY fk_status(status) REFERENCES status(id)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES 
-  `people` WRITE,
-  `titles` WRITE,
-  `departments` WRITE,
-  `positions` WRITE,
-  `locations` WRITE,
-  `rooms` WRITE,
-  `statuses` WRITE;
-INSERT INTO `people`
+  `person` WRITE,
+  `title` WRITE,
+  `department` WRITE,
+  `position` WRITE,
+  `location` WRITE,
+  `room` WRITE,
+  `status` WRITE;
+INSERT INTO `person`
 SET username = 'skillsmatrixuser',
     password = '$2y$10$hoVN/tj3FCBlA2D3Pjsp0O1Uv7BdiZxA5bSLNg6B1PEbwP9N3Pwwe',
     firstname = 'Skills',
@@ -177,10 +177,10 @@ SET username = 'skillsmatrixuser',
     fax = '6666666',
     comment = 'Place Holder',
     public = '1',
-    title = ( SELECT id FROM titles WHERE description = 'Mr.' LIMIT 1),
-    department = ( SELECT id FROM departments WHERE description = 'IT SERVICES' LIMIT 1),
-    position = ( SELECT id FROM positions WHERE description = 'SYSTEMS ADMINISTRATOR' LIMIT 1),
-    location = ( SELECT id FROM locations WHERE description = 'DUBLIN' LIMIT 1),
-    room = ( SELECT id FROM rooms WHERE description = 'W001' LIMIT 1),
-    status = ( SELECT id FROM statuses WHERE description = 'ACTIVE' LIMIT 1);
+    title = ( SELECT id FROM title WHERE description = 'Mr.' LIMIT 1),
+    department = ( SELECT id FROM department WHERE description = 'IT SERVICES' LIMIT 1),
+    position = ( SELECT id FROM position WHERE description = 'SYSTEMS ADMINISTRATOR' LIMIT 1),
+    location = ( SELECT id FROM location WHERE description = 'DUBLIN' LIMIT 1),
+    room = ( SELECT id FROM room WHERE description = 'W001' LIMIT 1),
+    status = ( SELECT id FROM status WHERE description = 'ACTIVE' LIMIT 1);
 UNLOCK TABLES;
