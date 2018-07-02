@@ -73,9 +73,9 @@ CREATE TABLE `personSkill` (
   FOREIGN KEY (skillid) REFERENCES skill(id)
 ) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
-DROP TABLE IF EXISTS `position`;
+DROP TABLE IF EXISTS `role`;
 
-CREATE TABLE `position` (
+CREATE TABLE `role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -83,17 +83,19 @@ CREATE TABLE `position` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `position` WRITE;
-INSERT INTO `position` VALUES (1,'SYSTEMS ADMINISTRATOR','2018-06-27 17:32:30'),(2,'IT MANAGER','2018-06-27 17:34:22'),(3,'WEB DEVELOPER','2018-06-28 03:00:03');
+LOCK TABLES `role` WRITE;
+INSERT INTO `role` VALUES (1,'SYSTEMS ADMINISTRATOR','2018-06-27 17:32:30'),(2,'IT MANAGER','2018-06-27 17:34:22'),(3,'WEB DEVELOPER','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `personRole`;
 
 CREATE TABLE `personPosition` (
   `personid` int(11) NOT NULL,
   `positionid` int(11) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`personid`,`positionid`),
+  PRIMARY KEY (`personid`,`roleid`),
   FOREIGN KEY (personid) REFERENCES person(id),
-  FOREIGN KEY (positionid) REFERENCES position(id)
+  FOREIGN KEY (roleid) REFERENCES role(id)
 ) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 DROP TABLE IF EXISTS `title`;
@@ -206,7 +208,7 @@ CREATE TABLE `personDepartment` (
   `personid` int(11) NOT NULL,
   `departmentid` int(11) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`personid`,`locationid`),
+  PRIMARY KEY (`personid`,`departmentid`),
   FOREIGN KEY (personid) REFERENCES person(id),
   FOREIGN KEY (departmentid) REFERENCES department(id)
 ) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
@@ -224,6 +226,8 @@ CREATE TABLE `status` (
 LOCK TABLES `status` WRITE;
 INSERT INTO `status` VALUES (1,'ACTIVE','2018-06-27 17:32:30'),(2,'INACTIVE','2018-06-27 17:34:22'),(3,'SICK LEAVE','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `personStatus`;
 
 CREATE TABLE `personStatus` (
   `personid` int(11) NOT NULL,
