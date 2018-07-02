@@ -156,22 +156,22 @@ CREATE TABLE `person` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
-  FOREIGN KEY fk_title(title) REFERENCES titles(id),
-  FOREIGN KEY fk_department(department) REFERENCES departments(id),
-  FOREIGN KEY fk_position(position) REFERENCES positions(id),
-  FOREIGN KEY fk_location(location) REFERENCES locations(id),
-  FOREIGN KEY fk_room(room) REFERENCES rooms(id),
-  FOREIGN KEY fk_status(status) REFERENCES statuses(id)
+  FOREIGN KEY fk_title(title) REFERENCES title(id),
+  FOREIGN KEY fk_department(department) REFERENCES department(id),
+  FOREIGN KEY fk_position(position) REFERENCES position(id),
+  FOREIGN KEY fk_location(location) REFERENCES location(id),
+  FOREIGN KEY fk_room(room) REFERENCES room(id),
+  FOREIGN KEY fk_status(status) REFERENCES status(id)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES 
   `person` WRITE,
-  `titles` WRITE,
-  `departments` WRITE,
-  `positions` WRITE,
-  `locations` WRITE,
-  `rooms` WRITE,
-  `statuses` WRITE;
+  `title` WRITE,
+  `department` WRITE,
+  `position` WRITE,
+  `location` WRITE,
+  `room` WRITE,
+  `status` WRITE;
 INSERT INTO `person`
 SET username = 'skillsmatrixuser',
     password = '$2y$10$hoVN/tj3FCBlA2D3Pjsp0O1Uv7BdiZxA5bSLNg6B1PEbwP9N3Pwwe',
