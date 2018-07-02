@@ -88,7 +88,7 @@ CREATE TABLE `personSkillLevel` (
   `skillid` int(11) NOT NULL,
   `levelid` int(11) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`personid`,`skillid`,`levelid`),
+  PRIMARY KEY (`personid`,`skillid`),
   FOREIGN KEY (personid) REFERENCES person(id),
   FOREIGN KEY (skillid) REFERENCES skill(id),
   FOREIGN KEY (levelid) REFERENCES level(id)
