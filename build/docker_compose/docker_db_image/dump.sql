@@ -4,6 +4,8 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user` VALUES ('localhost','skillsmatrixuser','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9','N','2018-06-26 08:27:17',NULL,'N');
 UNLOCK TABLES;
 
+DROP DATABASE IF EXISTS `skillsmatrix`;
+
 CREATE DATABASE `skillsmatrix` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 GRANT ALL PRIVILEGES ON skillsmatrix.* TO 'skillsmatrixuser'@'%';
@@ -89,9 +91,9 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `personRole`;
 
-CREATE TABLE `personPosition` (
+CREATE TABLE `personRole` (
   `personid` int(11) NOT NULL,
-  `positionid` int(11) NOT NULL,
+  `roleid` int(11) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`personid`,`roleid`),
   FOREIGN KEY (personid) REFERENCES person(id),
@@ -111,6 +113,8 @@ CREATE TABLE `title` (
 LOCK TABLES `title` WRITE;
 INSERT INTO `title` VALUES (1,'MR.','2018-06-27 17:32:30'),(2,'MISS.','2018-06-27 17:34:22'),(3,'MS.','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `personTitle`;
 
 CREATE TABLE `personTitle` (
   `personid` int(11) NOT NULL,
@@ -135,6 +139,8 @@ LOCK TABLES `room` WRITE;
 INSERT INTO `room` VALUES (1,'W001','2018-06-27 17:32:30'),(2,'W002','2018-06-27 17:34:22'),(3,'W003','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `personRoom`;
+
 CREATE TABLE `personRoom` (
   `personid` int(11) NOT NULL,
   `roomid` int(11) NOT NULL,
@@ -157,6 +163,8 @@ CREATE TABLE `permission` (
 LOCK TABLES `permission` WRITE;
 INSERT INTO `permission` VALUES (1,'USER','2018-06-27 17:32:30'),(2,'MANAGER','2018-06-27 17:34:22'),(3,'ADMINISTRATOR','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `personPermission`;
 
 CREATE TABLE `personPermission` (
   `personid` int(11) NOT NULL,
@@ -181,6 +189,8 @@ LOCK TABLES `location` WRITE;
 INSERT INTO `location` VALUES (1,'DUBLIN','2018-06-27 17:32:30'),(2,'LIMERICK','2018-06-27 17:34:22'),(3,'CORK','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `personLocation`;
+
 CREATE TABLE `personLocation` (
   `personid` int(11) NOT NULL,
   `locationid` int(11) NOT NULL,
@@ -203,6 +213,8 @@ CREATE TABLE `department` (
 LOCK TABLES `department` WRITE;
 INSERT INTO `department` VALUES (1,'IT SERVICES','2018-06-27 17:32:30'),(2,'ADMINISTRATION','2018-06-27 17:34:22'),(3,'MARKETING','2018-06-28 03:00:03');
 UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `personDepartment`;
 
 CREATE TABLE `personDepartment` (
   `personid` int(11) NOT NULL,
