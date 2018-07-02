@@ -12,7 +12,7 @@
         require_once '../private/db.inc.php';
         mysqli_select_db($link,'skillsmatrix');
 
-        $sql = "INSERT INTO skills (description) VALUES (UPPER('$_POST[skill]'))";
+        $sql = "INSERT INTO skill (description) VALUES (UPPER('$_POST[skill]'))";
 
         if(mysqli_query($link, $sql)){
 //            echo "Records added successfully.";
@@ -175,7 +175,7 @@
                 <?php
                 require_once '../private/db.inc.php';
 
-                $sql = 'SELECT * FROM skills';
+                $sql = 'SELECT * FROM skill';
                 mysqli_select_db($link,'skillsmatrix');
                 $retval = mysqli_query( $link, $sql);
 

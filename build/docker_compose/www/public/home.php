@@ -141,7 +141,7 @@
                 <?php
                     require_once '../private/db.inc.php';
 
-                    $sql = 'SELECT * FROM people';
+                    $sql = 'SELECT * FROM person';
                     mysqli_select_db($link,'skillsmatrix');
                     $retval = mysqli_query( $link, $sql);
 

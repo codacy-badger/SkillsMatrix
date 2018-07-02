@@ -136,21 +136,6 @@ LOCK TABLES `extension` WRITE;
 INSERT INTO `extension` VALUES (1,'111','2018-06-27 17:32:30'),(2,'222','2018-06-27 17:34:22'),(3,'333','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `person2Extension`;
-
-CREATE TABLE `person2Extension` (
-  `personid` int(11) NOT NULL,
-  `extensionid` int(11) NOT NULL,
-  UNIQUE KEY `description` (`description`),
-  PRIMARY KEY (`personid,extensionid`)
-  FOREIGN KEY fk_personid(personid) REFERENCES person(id),
-  FOREIGN KEY fk_extensionid(extensionid) REFERENCES extension(id),
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
-
-LOCK TABLES `person2Extension` WRITE;
-INSERT INTO `person2Extension` VALUES (1,'1','1'),(2,'1','1');
-UNLOCK TABLES;
-
 
 DROP TABLE IF EXISTS `person`;
 
