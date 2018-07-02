@@ -141,7 +141,7 @@ CREATE TABLE `person` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES 
@@ -164,5 +164,5 @@ SET username = 'skillsmatrixuser',
     mobile = '6666666',
     fax = '6666666',
     comment = 'Place Holder',
-    public = '1',
+    public = '1';
 UNLOCK TABLES;
