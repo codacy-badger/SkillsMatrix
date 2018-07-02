@@ -154,16 +154,21 @@
                     <div class="container-fluid">
 
                         <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        
                             <span></span>
                             <span></span>
                             <span></span>
                         </button>
+                        
                         <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <i class="fas fa-align-justify"></i>
                         </button>
+                        
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <h2>&nbsp;<i class="fas fa-wrench"></i>Skills</h2>
                             <ul class="nav navbar-nav ml-auto">
+                            
                                 <li class="nav-item active">
                                     <p><a href="mailto:luiz1361@gmail.com?Subject=SkillsMatrix Bug Report" target="_top"" class="btn btn-danger"><i class="fas fa-bug"></i> Report a Bug</a> <a href="#" class="btn article" onclick="window.print();return false;"><i class="fa fa-print"></i> Print</a></p>
                                 </li>
@@ -184,7 +189,7 @@
                 }
                 echo "<table id='table' class='table table-striped table-bordered' align='center' data-sorting='true' style='max-width: 70%;text-align:left' ><thead><tr><th>ID</th><th>Description</th><th>Created At</th><th>Delete</th></tr></thead><tbody>";
                 while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
-                echo "<tr><td>".$row["id"]."</td><td>".$row["description"]."</td><td>".$row["created_at"]."</td><td><button class='btn btn-default'><a href='skills.php?id=".$row['id']."' onClick='return confirm(\"This action is irreversible, are you sure?\");' >Delete</a></button></td></tr>";
+                echo "<tr><td>".$row["id"]."</td><td>".$row["description"]."</td><td>".$row["created_at"]."</td><td><button class='btn btn-warning'><a href='skills.php?id=".$row['id']."' onClick='return confirm(\"This action is irreversible, are you sure?\");' >Delete</a></button></td></tr>";
                 }
                         echo "</tbody></table>";
 

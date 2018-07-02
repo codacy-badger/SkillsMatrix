@@ -86,7 +86,7 @@
                                 <a href="#">Manage Locations</a>
                             </li>
                             <li>
-                                <a href="#">Manage Positions</a>
+                                <a href="#">Manage Roles</a>
                             </li>
                             <li>
                                 <a href="#">Manage Rooms</a>
@@ -96,6 +96,9 @@
                             </li>
                             <li>
                                 <a href="#">Manage Titles</a>
+                            </li>
+                            <li>
+                                <a href="#">Manage Statuses</a>
                             </li>
 
                         </ul>
