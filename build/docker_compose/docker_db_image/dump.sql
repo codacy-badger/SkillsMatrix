@@ -156,12 +156,6 @@ CREATE TABLE `person` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
-  FOREIGN KEY fk_title(title) REFERENCES title(id),
-  FOREIGN KEY fk_department(department) REFERENCES department(id),
-  FOREIGN KEY fk_position(position) REFERENCES position(id),
-  FOREIGN KEY fk_location(location) REFERENCES location(id),
-  FOREIGN KEY fk_room(room) REFERENCES room(id),
-  FOREIGN KEY fk_status(status) REFERENCES status(id)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES 
@@ -185,11 +179,5 @@ SET username = 'skillsmatrixuser',
     fax = '6666666',
     comment = 'Place Holder',
     public = '1',
-    title = ( SELECT id FROM titles WHERE description = 'Mr.' LIMIT 1),
-    department = ( SELECT id FROM departments WHERE description = 'IT SERVICES' LIMIT 1),
-    position = ( SELECT id FROM positions WHERE description = 'SYSTEMS ADMINISTRATOR' LIMIT 1),
-    location = ( SELECT id FROM locations WHERE description = 'DUBLIN' LIMIT 1),
-    room = ( SELECT id FROM rooms WHERE description = 'W001' LIMIT 1),
-    status = ( SELECT id FROM statuses WHERE description = 'ACTIVE' LIMIT 1);
 UNLOCK TABLES;
 
