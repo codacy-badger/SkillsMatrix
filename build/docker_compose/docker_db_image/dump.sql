@@ -45,6 +45,7 @@ CREATE TABLE `person` (
   `public` int(11) NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
+  `statusid` int(11) NULL,
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `staffid` (`staffid`),
