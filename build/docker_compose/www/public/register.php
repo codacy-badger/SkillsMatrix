@@ -91,35 +91,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
-<html>
-<head>
- 
-    <title>Skills Matrix - Registration</title>
-    <link href="css/style.scss" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <style>
-  	    body {
-		    background-color: #333333;
-	    }
-    </style>
-</head>
-<body id="particles-js">
-        <form <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <h1 class="text-center">Sign Up</h1>
-        <p class="text-center">Please fill this form to create an account.</p> 
-        <div class="svgContainer">
-        <div>
-        
-               </div>
-    </div>
-        
-        <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+    <html>
+
+    <head>
+
+        <title>Skills Matrix - Registration</title>
+        <link href="css/style.scss" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+            body {
+                background-color: #333333;
+            }
+        </style>
+    </head>
+
+    <body id="particles-js">
+        <form <?php echo htmlspecialchars($_SERVER[ "PHP_SELF"]); ?>" method="post">
+            <h1 class="text-center">Sign Up</h1>
+            <p class="text-center">Please fill this form to create an account.</p>
+            <div class="svgContainer">
+                <div>
+
+                </div>
+            </div>
+
+            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
-                <input type="text" name="username"class="form-control" value="<?php echo $username; ?>">
+                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-            <label>Password</label>
+                <label>Password</label>
                 <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
@@ -133,15 +135,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
             <p>Already have an account? <a href="index.php">Login here</a>.</p>
-            
-     
+
         </form>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
-  <script src="scripts/custom.js"></script>
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="scripts/particles.js"></script>
-  <script src="scripts/config.js"></script>
-</body>
-</html>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+        <script src="scripts/custom.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="scripts/particles.js"></script>
+        <script src="scripts/config.js"></script>
+    </body>
+
+    </html>
