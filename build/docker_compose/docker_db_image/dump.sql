@@ -6,140 +6,125 @@ UNLOCK TABLES;
 
 CREATE DATABASE `skillsmatrix` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+GRANT ALL PRIVILEGES ON skillsmatrix.* TO 'skillsmatrixuser'@'localhost';
+
 USE `skillsmatrix`;
 
-GRANT ALL PRIVILEGES ON skillsmatrix.* TO 'skillsmatrixuser'@'%';
+DROP TABLE IF EXISTS `skills`;
 
-DROP TABLE IF EXISTS `skill`;
-
-CREATE TABLE `skill` (
+CREATE TABLE `skills` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
-  `modification` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `skill` WRITE;
-INSERT INTO `skill` VALUES (1,'CISCO','2018-06-27 17:32:30'),(2,'RADIUS','2018-06-27 17:34:22'),(3,'VLAN','2018-06-28 03:00:03');
+LOCK TABLES `skills` WRITE;
+INSERT INTO `skills` VALUES (1,'CISCO','2018-06-27 17:32:30'),(2,'RADIUS','2018-06-27 17:34:22'),(3,'VLAN','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `position`;
+DROP TABLE IF EXISTS `positions`;
 
-CREATE TABLE `position` (
+CREATE TABLE `positions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
-  `modification` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `position` WRITE;
-INSERT INTO `position` VALUES (1,'SYSTEMS ADMINISTRATOR','2018-06-27 17:32:30'),(2,'IT MANAGER','2018-06-27 17:34:22'),(3,'WEB DEVELOPER','2018-06-28 03:00:03');
+LOCK TABLES `positions` WRITE;
+INSERT INTO `positions` VALUES (1,'SYSTEMS ADMINISTRATOR','2018-06-27 17:32:30'),(2,'IT MANAGER','2018-06-27 17:34:22'),(3,'WEB DEVELOPER','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `title`;
+DROP TABLE IF EXISTS `titles`;
 
-CREATE TABLE `title` (
+CREATE TABLE `titles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
-  `modification` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `title` WRITE;
-INSERT INTO `title` VALUES (1,'MR.','2018-06-27 17:32:30'),(2,'MISS.','2018-06-27 17:34:22'),(3,'MS.','2018-06-28 03:00:03');
+LOCK TABLES `titles` WRITE;
+INSERT INTO `titles` VALUES (1,'MR.','2018-06-27 17:32:30'),(2,'MISS.','2018-06-27 17:34:22'),(3,'MS.','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `room`;
+DROP TABLE IF EXISTS `rooms`;
 
-CREATE TABLE `room` (
+CREATE TABLE `rooms` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
-  `modification` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `room` WRITE;
-INSERT INTO `room` VALUES (1,'W001','2018-06-27 17:32:30'),(2,'W002','2018-06-27 17:34:22'),(3,'W003','2018-06-28 03:00:03');
+LOCK TABLES `rooms` WRITE;
+INSERT INTO `rooms` VALUES (1,'W001','2018-06-27 17:32:30'),(2,'W002','2018-06-27 17:34:22'),(3,'W003','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `permission`;
+DROP TABLE IF EXISTS `permissions`;
 
-CREATE TABLE `permission` (
+CREATE TABLE `permissions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
-  `modification` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `permission` WRITE;
-INSERT INTO `permission` VALUES (1,'USER','2018-06-27 17:32:30'),(2,'MANAGER','2018-06-27 17:34:22'),(3,'ADMINISTRATOR','2018-06-28 03:00:03');
+LOCK TABLES `permissions` WRITE;
+INSERT INTO `permissions` VALUES (1,'USER','2018-06-27 17:32:30'),(2,'MANAGER','2018-06-27 17:34:22'),(3,'ADMINISTRATOR','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `location`;
+DROP TABLE IF EXISTS `locations`;
 
-CREATE TABLE `location` (
+CREATE TABLE `locations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
-  `modification` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `location` WRITE;
-INSERT INTO `location` VALUES (1,'DUBLIN','2018-06-27 17:32:30'),(2,'LIMERICK','2018-06-27 17:34:22'),(3,'CORK','2018-06-28 03:00:03');
+LOCK TABLES `locations` WRITE;
+INSERT INTO `locations` VALUES (1,'DUBLIN','2018-06-27 17:32:30'),(2,'LIMERICK','2018-06-27 17:34:22'),(3,'CORK','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `departments`;
 
-CREATE TABLE `department` (
+CREATE TABLE `departments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
-  `modification` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `department` WRITE;
-INSERT INTO `department` VALUES (1,'IT SERVICES','2018-06-27 17:32:30'),(2,'ADMINISTRATION','2018-06-27 17:34:22'),(3,'MARKETING','2018-06-28 03:00:03');
+LOCK TABLES `departments` WRITE;
+INSERT INTO `departments` VALUES (1,'IT SERVICES','2018-06-27 17:32:30'),(2,'ADMINISTRATION','2018-06-27 17:34:22'),(3,'MARKETING','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `status`;
+DROP TABLE IF EXISTS `statuses`;
 
-CREATE TABLE `status` (
+CREATE TABLE `statuses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) NOT NULL,
-  `modification` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `description` (`description`),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
 
-LOCK TABLES `status` WRITE;
-INSERT INTO `status` VALUES (1,'ACTIVE','2018-06-27 17:32:30'),(2,'INACTIVE','2018-06-27 17:34:22'),(3,'SICK LEAVE','2018-06-28 03:00:03');
+LOCK TABLES `statuses` WRITE;
+INSERT INTO `statuses` VALUES (1,'ACTIVE','2018-06-27 17:32:30'),(2,'INACTIVE','2018-06-27 17:34:22'),(3,'SICK LEAVE','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `extension`;
+DROP TABLE IF EXISTS `people`;
 
-CREATE TABLE `extension` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) NOT NULL,
-  `modification` datetime DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE KEY `description` (`description`),
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CharSet=utf8mb4;
-
-LOCK TABLES `extension` WRITE;
-INSERT INTO `extension` VALUES (1,'111','2018-06-27 17:32:30'),(2,'222','2018-06-27 17:34:22'),(3,'333','2018-06-28 03:00:03');
-UNLOCK TABLES;
-
-
-DROP TABLE IF EXISTS `person`;
-
-CREATE TABLE `person` (
+CREATE TABLE `people` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -147,26 +132,39 @@ CREATE TABLE `person` (
   `lastname` varchar(100) NULL,
   `dateofbirth` date NULL,
   `email` varchar(255) NULL,
+  `extension` varchar(255) NULL,
   `phone` varchar(255) NULL,
   `mobile` varchar(255) NULL,
   `fax` varchar(255) NULL,
   `comment` varchar(255) NULL,
   `public` int(11) NULL,
-  `modification` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `title` int(11) NULL,
+  `department` int(11) NULL,
+  `position` int(11) NULL,
+  `location` int(11) NULL,
+  `room` int(11) NULL,
+  `status` int(11) NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `email` (`email`)
+  UNIQUE KEY `email` (`email`),
+  FOREIGN KEY fk_title(title) REFERENCES titles(id),
+  FOREIGN KEY fk_department(department) REFERENCES departments(id),
+  FOREIGN KEY fk_position(position) REFERENCES positions(id),
+  FOREIGN KEY fk_location(location) REFERENCES locations(id),
+  FOREIGN KEY fk_room(room) REFERENCES rooms(id),
+  FOREIGN KEY fk_status(status) REFERENCES statuses(id)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES 
-  `person` WRITE,
-  `title` WRITE,
-  `department` WRITE,
-  `position` WRITE,
-  `location` WRITE,
-  `room` WRITE,
-  `status` WRITE;
-INSERT INTO `person`
+  `people` WRITE,
+  `titles` WRITE,
+  `departments` WRITE,
+  `positions` WRITE,
+  `locations` WRITE,
+  `rooms` WRITE,
+  `statuses` WRITE;
+INSERT INTO `people`
 SET username = 'skillsmatrixuser',
     password = '$2y$10$hoVN/tj3FCBlA2D3Pjsp0O1Uv7BdiZxA5bSLNg6B1PEbwP9N3Pwwe',
     firstname = 'Skills',
@@ -178,6 +176,11 @@ SET username = 'skillsmatrixuser',
     mobile = '6666666',
     fax = '6666666',
     comment = 'Place Holder',
-    public = '1'
+    public = '1',
+    title = ( SELECT id FROM titles WHERE description = 'Mr.' LIMIT 1),
+    department = ( SELECT id FROM departments WHERE description = 'IT SERVICES' LIMIT 1),
+    position = ( SELECT id FROM positions WHERE description = 'SYSTEMS ADMINISTRATOR' LIMIT 1),
+    location = ( SELECT id FROM locations WHERE description = 'DUBLIN' LIMIT 1),
+    room = ( SELECT id FROM rooms WHERE description = 'W001' LIMIT 1),
+    status = ( SELECT id FROM statuses WHERE description = 'ACTIVE' LIMIT 1);
 UNLOCK TABLES;
-
