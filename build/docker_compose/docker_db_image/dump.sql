@@ -12,6 +12,20 @@ GRANT ALL PRIVILEGES ON skillsmatrix.* TO 'skillsmatrixuser'@'%';
 
 USE `skillsmatrix`;
 
+DROP TABLE IF EXISTS `status`;
+
+CREATE TABLE `status` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `description` (`description`),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
+
+LOCK TABLES `status` WRITE;
+INSERT INTO `status` VALUES (1,'ACTIVE','2018-06-27 17:32:30'),(2,'INACTIVE','2018-06-27 17:34:22'),(3,'SICK LEAVE','2018-06-28 03:00:03');
+UNLOCK TABLES;
+
 DROP TABLE IF EXISTS `person`;
 
 CREATE TABLE `person` (
@@ -33,7 +47,8 @@ CREATE TABLE `person` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `staffid` (`staffid`)
+  UNIQUE KEY `staffid` (`staffid`),
+  FOREIGN KEY (statusid) REFERENCES status(id)
 ) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 LOCK TABLES `person` WRITE;
@@ -67,31 +82,16 @@ LOCK TABLES `skill` WRITE;
 INSERT INTO `skill` VALUES (1,'CISCO','2018-06-27 17:32:30'),(2,'RADIUS','2018-06-27 17:34:22'),(3,'VLAN','2018-06-28 03:00:03');
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `level`;
+DROP TABLE IF EXISTS `personSkill`;
 
-CREATE TABLE `level` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) NOT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE KEY `description` (`description`),
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
-
-LOCK TABLES `level` WRITE;
-INSERT INTO `level` VALUES (1,'1','2018-06-27 17:32:30'),(2,'2','2018-06-27 17:34:22'),(3,'3','2018-06-28 03:00:03');
-UNLOCK TABLES;
-
-DROP TABLE IF EXISTS `personSkillLevel`;
-
-CREATE TABLE `personSkillLevel` (
+CREATE TABLE `personSkill` (
   `personid` int(11) NOT NULL,
   `skillid` int(11) NOT NULL,
   `levelid` int(11) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`personid`,`skillid`),
   FOREIGN KEY (personid) REFERENCES person(id),
-  FOREIGN KEY (skillid) REFERENCES skill(id),
-  FOREIGN KEY (levelid) REFERENCES level(id)
+  FOREIGN KEY (skillid) REFERENCES skill(id)
 ) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
 DROP TABLE IF EXISTS `role`;
@@ -246,28 +246,5 @@ CREATE TABLE `personDepartment` (
   FOREIGN KEY (departmentid) REFERENCES department(id)
 ) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
-DROP TABLE IF EXISTS `status`;
 
-CREATE TABLE `status` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) NOT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE KEY `description` (`description`),
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
-
-LOCK TABLES `status` WRITE;
-INSERT INTO `status` VALUES (1,'ACTIVE','2018-06-27 17:32:30'),(2,'INACTIVE','2018-06-27 17:34:22'),(3,'SICK LEAVE','2018-06-28 03:00:03');
-UNLOCK TABLES;
-
-DROP TABLE IF EXISTS `personStatus`;
-
-CREATE TABLE `personStatus` (
-  `personid` int(11) NOT NULL,
-  `statusid` int(11) NOT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`personid`,`statusid`),
-  FOREIGN KEY (personid) REFERENCES person(id),
-  FOREIGN KEY (statusid) REFERENCES status(id)
-) ENGINE=InnoDB DEFAULT CharSet=utf8mb4;
 
