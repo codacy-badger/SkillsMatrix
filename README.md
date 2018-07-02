@@ -65,6 +65,9 @@ Skills List page:
 6. Encoding: CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 7. Engine: InnoDB, implements transactions, foreign keys and relationship constraints. Row-level locking and better crash recovery.
 
+Schema:
+
+![alt text](https://github.com/luiz1361/SkillsMatrix/raw/master/docs/database/schema.png)
 
 
 # References
